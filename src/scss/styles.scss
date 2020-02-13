@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600,600i,700,800,900|Josefin+Sans:400,600,600i,700&display=swap");
+
+@import "mixins";
+@import "variables";
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $headerFont;
+  margin: 0;
+}
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: $navy;
+  font-family: $textFont;
+}
+.header {
+  height: 100px;
+  background-color: $navy;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  @include allCenter;
+  &__content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logOut {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+.logo {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__img {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+  &__png {
+    display: block;
+  }
+}
+.main {
+  width: 100%;
+  display: flex;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  width: 15%;
+  min-height: calc(100vh - 100px);
+  background-color: $gray;
+  padding: 0 10px;
+  &__link {
+    display: block;
+    @include bounceIn;
+    color: $navy;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+.content {
+  text-align: center;
+  width: 90%;
+  height: 100%;
+  background-color: $white;
+}
+.logIn {
+  max-width: 1200px;
+  width: 90%;
+  height: calc(100vh - 100px);
+  margin: 0 auto;
+  text-align: center;
+  @include allCenter;
+}
+
+.form {
+  min-width: 350px;
+  max-width: 500px;
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+  border: 3px solid $navy;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-image: url("../../src/img/login.jpg");
+  background-size: 100%;
+  &__title {
+    color: $red;
+    text-shadow: -6px -5px 6px $navy;
+    font-size: 60px;
+    align-self: flex-start;
+    margin: 10px 0 30px;
+    font-weight: 900;
+  }
+  &__inputs {
+    width: 100%;
+    text-align: center;
+  }
+}
+.inputGroup {
+  max-width: 450px;
+  width: 90%;
+  margin: 0 auto 60px;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    z-index: 10;
+  }
+  &__error {
+    position: absolute;
+    color: $red;
+    height: 15px;
+    width: 80%;
+    text-align: left;
+    font-weight: 600;
+  }
+  &__input {
+    position: relative;
+    display: block;
+    border-radius: $bradius;
+    margin: 0 auto;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    text-indent: 50px;
+    @include input;
+  }
+}
+
+.error {
+  border: 2px solid $red;
+}
+.btn {
+  height: 40px;
+  width: 100px;
+  border-radius: $bradius;
+  color: $navy;
+  font-weight: bold;
+  background-color: $gray;
+  border: 2px solid $navy;
+  @include btns;
+}
+.btns {
+  font-size: 10px;
+  height: 20px;
+  width: 60px;
+  margin: 10px 0;
+}
+.gray {
+  color: $gray;
+}
+.red {
+  color: $red;
+}
+.hidden {
+  display: none;
+}
+.textS {
+  font-size: 12px;
+  color: $red;
+}
+
+// Users
+.users {
+  padding: 20px;
+  &__search {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__icon {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+  }
+  &__input {
+    text-indent: 30px;
+    width: 100%;
+    border-radius: $bradius;
+    height: 30px;
+    padding: 0 5px;
+    @include input;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    margin: 10px;
+    padding: 0 10px;
+    @include input;
+    border: 2px solid $gray;
+    border-radius: $bradius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &__photo {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: $bradius;
+  }
+  &__photoBig {
+    width: 100px;
+    height: 10npm0px;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &__info {
+    width: 80%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  &__name,
+  &__location {
+    width: 20%;
+    margin: 2px 0;
+    text-align: left;
+  }
+  &__pagination {
+    margin: 20px auto;
+  }
+  &__page {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  &__pageActive {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: $red;
+  }
+}
