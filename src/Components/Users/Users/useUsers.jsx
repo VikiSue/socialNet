@@ -35,5 +35,5 @@ export const useUsers = (fetchUsers, users, currentPage) => {
     return setFilteredUsers(filteredUsers);
   }, [searchText]);
 
-  return { handleSearch, list, searchText };
+  return { handleSearch, list, searchText, filteredUsers };
 };

@@ -272,4 +272,10 @@ h5 {
     border-radius: 50%;
     background-color: $red;
   }
+  &__match {
+    height: 25px;
+    color: $red;
+    margin: 5px 0;
+    text-align: left;
+  }
 }
