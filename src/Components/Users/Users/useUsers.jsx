@@ -3,8 +3,6 @@ import React, { useCallback, useEffect, useState } from "react";
 export const useUsers = (fetchUsers, users, currentPage) => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [searchText, setSeachText] = useState('');
-  const [selectedUser, setSelectedUser] = useState('');
-
 
   const list = filteredUsers.length > 0 ? filteredUsers : users;
 

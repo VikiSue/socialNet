@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { onUsersPageChange } from "../../../actions/onUsersPageChange";
 import { fetchUsers } from "../../../actions/fetchUsers";
-import { useUsersList } from "./useUsersList";
-import User from "../User/User";
+import { getSelectedUser } from "../../../actions/getSelectedUser";
+
 
 const UsersList = props => {
-  const { handleSelect, selectedUser, handleHide } = useUsersList(props.list);
+
   const pages = [1, 2, 3, 4, 5, 6, 7];
 
   const handlePageChange = p => {
@@ -16,13 +16,6 @@ const UsersList = props => {
 
   return (
     <>
-      <div>
-        {selectedUser.name ? (
-          <User selectedUser={selectedUser} handleHide={handleHide} />
-        ) : (
-          undefined
-        )}
-      </div>
       <div className=' users__pagination'>
         {pages.map(p => (
           <span
@@ -43,7 +36,7 @@ const UsersList = props => {
           <li
             key={item.cell}
             className="users__item"
-            onClick={() => handleSelect(item.cell)}
+            onClick={() => props.getSelectedUser(props.list, item.cell)}
           >
             <div className="users__photo">
               <img src={item.picture.thumbnail} className="users__img" />
@@ -68,9 +61,10 @@ const UsersList = props => {
 };
 const UsersListContainer = connect(
   state => ({
-    currentPage: state.users.currentPage
+    currentPage: state.users.currentPage,
+
   }),
-  { fetchUsers, onUsersPageChange }
+  { fetchUsers, onUsersPageChange, getSelectedUser }
 )(UsersList);
 
 export default UsersListContainer;

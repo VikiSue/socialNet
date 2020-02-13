@@ -14,8 +14,7 @@ const Users = props => {
     props.users,
     props.currentPage
   );
-  console.log("ST", searchText);
-  console.log("FU", filteredUsers);
+
   return (
     <div className="users">
       <div className="users__search">
