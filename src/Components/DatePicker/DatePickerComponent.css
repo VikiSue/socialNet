@@ -1,0 +1,17 @@
+
+.react-datepicker__day-name,
+.react-datepicker__current-month{
+    display: none;
+}
+.react-datepicker__day {
+    display: inline-block;
+    margin: 2px;
+    height: 15px;
+    width: 15px;
+
+    text-align: center;
+}
+
+.react-datepicker__day--outside-month {
+    opacity: 0.5;
+}

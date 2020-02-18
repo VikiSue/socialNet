@@ -83,7 +83,6 @@ h5 {
   width: 90%;
   height: 100%;
   background-color: $white;
-
 }
 .logIn {
   max-width: 1200px;
@@ -230,7 +229,6 @@ h5 {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-
   }
   &__photo {
     width: 60px;
@@ -292,7 +290,6 @@ h5 {
   }
 }
 
-
 //USER
 
 .user {
@@ -302,20 +299,47 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   &__img {
-    margin: 0 auto;
     min-width: 200px;
     width: 40%;
     overflow: hidden;
+  }
+  &__outline {
     border-radius: 10px;
-    border: 3px solid $blue;
+    border: 3px solid $navy;
+    padding: 20px;
+    position: relative;
+    z-index: 3;
   }
 
   &__photo {
+    border-radius: 10px;
+    border: 3px solid $blue;
+    position: relative;
+    z-index: 7;
+
+    &::after {
+      @include af-bef(calc(100% + 80px), 40%);
+      position: absolute;
+      background-color: #fff;
+      top: -25%;
+      left: 30%;
+      z-index: 6;
+    }
+    &::before {
+      @include af-bef(40%, calc(100% + 80px));
+      position: absolute;
+      background-color: #fff;
+      top: 25%;
+      left: -20%;
+      z-index: 6;
+    }
+  }
+  &__image {
     display: block;
     width: 100%;
     position: relative;
+    z-index: 7;
   }
   &__text {
     max-width: 400px;
@@ -325,20 +349,17 @@ h5 {
     background-image: url("../../src/img/bg.gif");
     background-position: right;
     background-repeat: no-repeat;
-
   }
   &__data {
     font-size: 20px;
     font-weight: 600;
     margin-top: 0;
-
   }
   &__info {
     font-size: 25px;
     color: $blue;
     font-family: $headerFont;
     font-weight: bold;
-
   }
 
   &__btn {
