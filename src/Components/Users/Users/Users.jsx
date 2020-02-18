@@ -8,12 +8,13 @@ import { useUsers } from "./useUsers";
 import UsersList from "../UserList/UserList";
 import search from "./../../../img/search.png";
 
-const Users = props => {
+const Users = (props) => {
   const { handleSearch, list, searchText, filteredUsers } = useUsers(
     props.fetchUsers,
     props.users,
     props.currentPage
   );
+  console.log('LLLLLLLLL', list);
 
   return (
     <div className="users">
@@ -26,7 +27,7 @@ const Users = props => {
           maxLength="20"
         />
         <div className="users__icon">
-          <img src={search} />
+          <img src={search} alt='icon'/>
         </div>
         {filteredUsers.length === 0 && searchText.length > 0 ? (
           <p className="users__match"> No match found</p>

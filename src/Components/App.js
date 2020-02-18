@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Header/Header";
 import Navbar from "./Navbar/Navbar";
 import LogIn from "./LogIn/LogIn";
 import "../scss/styles.scss";
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Profile from "./Profile/Profile";
 import Settings from "./Settings/Settings";
 import Users from "./Users/Users/Users";
 import User from "./User/User";
-import { hideSelectedUser } from "../actions/hideSelectedUser";
 
 const App = props => {
-  return (
+const id = props.location.pathname.slice([7]);
+    return (
     <div className="app">
       <div className="header">
         <Header />
@@ -21,25 +21,16 @@ const App = props => {
         <LogIn />
       ) : (
         <div className="main">
-          <div className="navbar">
+          <nav className="navbar">
             <Navbar />
-          </div>
+          </nav>
           <div className="content">
-            <Route path="/profile" render={() => <Profile />} />
-            <Route path="/settings" render={() => <Settings />} />
-            {props.selectedUser.name ? (
-              <Route
-                path="/users"
-                render={() => (
-                  <User
-                    selectedUser={props.selectedUser}
-                    hideSelectedUser={props.hideSelectedUser}
-                  />
-                )}
-              />
-            ) : (
-              <Route path="/users" render={() => <Users />} />
-            )}
+            <Switch>
+              <Route exact path="/propfile" render={() => <Profile />} />
+              <Route exact path="/settings" render={() => <Settings />} />
+              <Route exact path="/users" render={() => <Users />} />
+              <Route  path={`/users/${id}`} render={() => <User />} />
+            </Switch>
           </div>
         </div>
       )}
@@ -47,11 +38,9 @@ const App = props => {
   );
 };
 
-const AppContainer = connect(
-  state => ({
-    isLogged: state.logIn.isLogged,
-    selectedUser: state.users.selectedUser
-  }),
-  { hideSelectedUser }
-)(App);
+const AppWithRouter = withRouter(App);
+const AppContainer = connect(state => ({
+  isLogged: state.logIn.isLogged,
+  users: state.users
+}))(AppWithRouter);
 export default AppContainer;

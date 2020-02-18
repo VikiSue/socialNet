@@ -6,13 +6,15 @@ import {
 
 import { fetchUsersList } from "../services/fetchUsersList";
 
+
+
 export const fetchUsers = (num) => dispatch => {
   dispatch({ type: GET_USERS_FETCH_REQUEST });
   fetchUsersList(num)
     .then(result =>
       dispatch({
         type: GET_USERS_FETCH_SUCCESS,
-        payload: { users: result.results, currentPage: num}
+        payload: { users: result, currentPage: num}
       })
     )
     .catch(err => {

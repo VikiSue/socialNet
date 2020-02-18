@@ -15,6 +15,7 @@ const initialValue = {
 };
 
 export const onUsersFetch = (state = initialValue, action) => {
+  console.log('sttttt', state);
   switch (action.type) {
     case GET_USERS_FETCH_REQUEST:
       return {
@@ -40,12 +41,12 @@ export const onUsersFetch = (state = initialValue, action) => {
     case GET_SELECTED_USER:
       return {
         ...state,
-        selectedUser: action.payload
+        selectedUser: {...action.payload}
       };
     case HIDE_SELECTED_USER:
       return {
         ...state,
-        selectedUser: {}
+        selectedUser: {...action.payload}
       };
     default:
       return state;
