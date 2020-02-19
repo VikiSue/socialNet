@@ -3,6 +3,7 @@ import {reducer as formReducer} from 'redux-form';
 import {onLogInSubmit} from "../reducers/onLogInSubmit";
 import {GET_LOG_IN_SUCCESS} from "../types/types";
 import {onUsersFetch} from "../reducers/onUsersFetch";
+import {onProfileEdit} from "../reducers/onProfileEdit";
 
 
 export const rootReducer = combineReducers({
@@ -17,5 +18,6 @@ export const rootReducer = combineReducers({
         }
     }),
     logIn: onLogInSubmit,
-    users: onUsersFetch
+    users: onUsersFetch,
+    profile: onProfileEdit
 });
