@@ -3,7 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import "../../../scss/styles.scss";
 import { required } from "../../../services/validators";
 import { isRegEx } from "../../../services/validators";
-import InputField from "./InputField";
+import InputField from "../../reusableComponents/Inputs/InputField";
 import { minLength } from "../../../services/validators";
 import mail from "./../../../img/mail.png";
 import password from "./../../../img/password.png";
@@ -16,12 +16,11 @@ const LogInForm = props => {
         <h5 className='form__title'>Log In</h5>
       <div className='form__inputs'>
         <Field
-          name="username"
+          name="email"
           component={InputField}
           type="text"
           placeholder="yourEmail@.com"
           validate={[isRegEx, required]}
-          icon={mail}
         />
         <Field
           name="password"

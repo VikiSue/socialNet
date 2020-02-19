@@ -65,6 +65,7 @@ h5 {
   min-width: 100px;
   width: 15%;
   min-height: calc(100vh - 134px);
+  height: 100%;
   background-color: $gray;
   padding: 0 10px;
   &__link {
@@ -210,8 +211,8 @@ h5 {
     @include allCenter;
     background-image: url("../../src/img/border.jpg");
     position: absolute;
-   left: 10%;
-   top: 20%;
+    left: 10%;
+    top: 20%;
   }
   &__photo {
     border-radius: 50%;
@@ -387,9 +388,9 @@ h5 {
   }
   &__text {
     max-width: 400px;
-    width: 90%;
+    width: 50%;
     text-align: left;
-    margin: 0 auto;
+    margin: 30px;
     background-image: url("../../src/img/bg.gif");
     background-position: right;
     background-repeat: no-repeat;
@@ -409,5 +410,97 @@ h5 {
   &__btn {
     margin: 50px 0;
     width: 100%;
+  }
+}
+
+// SETTINGS
+
+.settings {
+  background-image: url("../../src/img/bg.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.settingsForm {
+  max-width: 1000px;
+  width: 90%;
+  min-height: 78vh;
+  height: 100%;
+  margin: 20px auto;
+  position: relative;
+  &__inputs {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    .btn {
+      margin-top: 30px;
+    }
+  }
+
+  &__inputsGroup {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__labelsGroup {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    .inputGroup {
+      width: 80%;
+      margin: 20px auto;
+      &__error {
+        margin: 0;
+      }
+    }
+  }
+  &__label {
+    font-weight: bold;
+    text-transform: capitalize;
+    width: 15%;
+    text-align: left;
+  }
+  &__datePicker {
+    margin: 30px;
+  }
+}
+
+//RAINBOW TEXT
+
+.rainbow-text {
+  position: absolute;
+  display: block;
+  left: 50%;
+  margin-left: -99px;
+}
+
+.title-text {
+  text-align: center;
+}
+
+.title-text span.letters {
+  font-size: 6rem;
+}
+
+.letters {
+  color: #fff;
+  text-shadow: 2px 2px 6px #333;
+  animation: color-changer 8s infinite;
+  transition: color-changer ease-in-out;
+  @for $i from 1 through 7 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+}
+
+@keyframes color-changer {
+  33% {
+    color: #005070;
+  }
+  66% {
+    color: #f24c62;
+  }
+
+  100% {
+    color: #c7c4c4;
   }
 }

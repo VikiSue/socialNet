@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../scss/styles.scss";
 
-const InputField = ({ icon, placeholder, type, input, meta, ...props }) => {
+const InputField = ({ icon,value,  placeholder, type, input, meta, ...props }) => {
   const isFieldValid = meta.touched && meta.error;
 
   return (
@@ -9,6 +9,7 @@ const InputField = ({ icon, placeholder, type, input, meta, ...props }) => {
       <div className="inputGroup">
         <input
           placeholder={placeholder}
+          value={value}
           type={type}
           maxLength="20"
           {...input}
