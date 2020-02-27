@@ -4,7 +4,6 @@ import {
   GET_USERS_FETCH_SUCCESS,
   SET_CURRENT_PAGE,
   GET_SELECTED_USER,
-  HIDE_SELECTED_USER
 } from "../types/types";
 
 const initialValue = {
@@ -15,7 +14,6 @@ const initialValue = {
 };
 
 export const onUsersFetch = (state = initialValue, action) => {
-  console.log('sttttt', state);
   switch (action.type) {
     case GET_USERS_FETCH_REQUEST:
       return {
@@ -39,11 +37,6 @@ export const onUsersFetch = (state = initialValue, action) => {
         currentPage: action.payload
       };
     case GET_SELECTED_USER:
-      return {
-        ...state,
-        selectedUser: {...action.payload}
-      };
-    case HIDE_SELECTED_USER:
       return {
         ...state,
         selectedUser: {...action.payload}

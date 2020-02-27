@@ -1,13 +1,31 @@
 import React from "react";
-import SettingsFormRedux from "./SettingsForm";
+import SettingsForm from "./SettingsForm";
+import { editProfile } from "../../actions/editProfile";
+import { connect } from "react-redux";
+import Loader from "../reusableComponents/Loader/Loader";
 
-const Settings = () => {
+const Settings = props => {
+
+  const onSubmit = values => {
+    console.log('values', values);
+    props.editProfile(
+      values.firstName,
+      values.lastName,
+      values.country,
+      values.city,
+      values.email,
+      values.cell
+    )
+  };
   return (
-    <div>
-      <div className="settings">
-        <SettingsFormRedux />
-      </div>
+    <div className="settings">
+      {props.isLoading ? <Loader /> : <SettingsForm  onSubmit={onSubmit}/>}
     </div>
   );
 };
-export default Settings;
+
+const SettingsContainer = connect(
+  state => ({ isLoading: state.profile.isLoading, profile: state.profile }),
+  { editProfile }
+)(Settings);
+export default SettingsContainer;

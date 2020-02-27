@@ -1,17 +1,17 @@
 import React from "react";
-import LogInFormRedux from "./Form/LogInForm";
+import LogInForm from "./Form/LogInForm";
 import { onLogIn } from "../../actions/onLogIn";
 import { connect } from "react-redux";
 import Loader from "../reusableComponents/Loader/Loader";
 
 const LogIn = props => {
-
   const onSubmit = values => {
+
     props.onLogIn(values.username, values.password);
   };
   return (
     <div className='logIn'>
-      {props.isLoading ? <Loader /> : <LogInFormRedux onSubmit={onSubmit} />}
+      {props.isLoading ? <Loader /> : <LogInForm onSubmit={onSubmit} />}
     </div>
   );
 };

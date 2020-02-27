@@ -1,0 +1,35 @@
+import {
+  GET_PROFILE_EDITED_REQUEST,
+  GET_PROFILE_EDITED_FAILURE,
+  GET_PROFILE_EDITED_SUCCESS
+} from "../types/types";
+import { callApi } from "../services/callApi";
+
+export const editProfile = (
+  firstName,
+  lastName,
+  country,
+  city,
+  email,
+  cell
+) => dispatch => {
+  dispatch({ type: GET_PROFILE_EDITED_REQUEST });
+
+  callApi()
+    .then(result =>
+      dispatch({
+        type: GET_PROFILE_EDITED_SUCCESS,
+        payload: {
+          firstName: firstName,
+          lastName: lastName,
+          country: country,
+          city: city,
+          email: email,
+          cell: cell
+        }
+      })
+    )
+    .catch(err => {
+      dispatch({ type: GET_PROFILE_EDITED_FAILURE, err });
+    });
+};

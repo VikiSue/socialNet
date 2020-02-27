@@ -20,7 +20,7 @@ const Profile = props => {
             {props.profile.lastName}
           </p>
           <p className="profile__text">
-            <span className="red">Birthday:</span>
+            <span className="red">Birthday: </span> {props.profile.birthday}
           </p>
           <p className="profile__text">
             <span className="red">Country:</span> {props.profile.country}

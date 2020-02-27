@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { hideSelectedUser } from "../../actions/hideSelectedUser";
 import { withRouter } from "react-router-dom";
 
 const User = props => {
@@ -38,11 +37,8 @@ const User = props => {
   );
 };
 const UserWithRouter = withRouter(User);
-const UserContainer = connect(
-  state => ({
-    selectedUser: state.users.selectedUser
-  }),
-  { hideSelectedUser }
-)(UserWithRouter);
+const UserContainer = connect(state => ({
+  selectedUser: state.users.selectedUser
+}))(UserWithRouter);
 
 export default UserContainer;

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 import { onLogInSubmit } from "../reducers/onLogInSubmit";
-import { GET_LOG_IN_SUCCESS } from "../types/types";
+import { GET_LOG_IN_SUCCESS, GET_PROFILE_EDITED_FAILURE } from "../types/types";
 import { onUsersFetch } from "../reducers/onUsersFetch";
 import { onProfileEdit } from "../reducers/onProfileEdit";
 
@@ -14,9 +14,6 @@ export const rootReducer = combineReducers({
         default:
           return state;
       }
-    },
-    settings: (state, action) => {
-      return state;
     }
   }),
   logIn: onLogInSubmit,

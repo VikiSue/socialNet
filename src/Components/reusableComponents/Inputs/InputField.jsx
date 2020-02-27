@@ -1,19 +1,29 @@
 import React from "react";
 import "../../../scss/styles.scss";
 
-const InputField = ({ icon,value,  placeholder, type, input, meta, ...props }) => {
+const InputField = ({
+  icon,
+  defaultValue,
+  placeholder,
+  type,
+  input,
+  meta,
+  ...props
+}) => {
   const isFieldValid = meta.touched && meta.error;
-
+console.log("i", defaultValue);
   return (
     <>
       <div className="inputGroup">
         <input
+          value={defaultValue}
           placeholder={placeholder}
-          value={value}
           type={type}
           maxLength="20"
           {...input}
-          className={isFieldValid ? "inputGroup__input error" : "inputGroup__input "}
+          className={
+            isFieldValid ? "inputGroup__input error" : "inputGroup__input "
+          }
         />
         <div className="inputGroup__icon">
           <img src={icon} alt="icon" />

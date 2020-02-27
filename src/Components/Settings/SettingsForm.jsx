@@ -1,15 +1,27 @@
 import React from "react";
-import DatePickerComponent from "../reusableComponents/DatePicker/DatePickerComponent";
+import { connect } from "react-redux";
+import { editProfile } from "../../actions/editProfile";
 import InputField from "../reusableComponents/Inputs/InputField";
 import { Field, reduxForm } from "redux-form";
-import { isRegEx, required } from "../../services/validators";
+import {
+  isRegExEmail,
+  required,
+  isRegExPhone,
+  minLength
+} from "../../services/validators";
 import mail from "../../img/mail.png";
 import country from "../../img/country.png";
 import city from "../../img/city.png";
 import name from "../../img/name.png";
 import phone from "../../img/phone.png";
 
+
 const SettingsForm = props => {
+  const minLengthText = () => {
+    minLength(3);
+  };
+
+  console.log("FFFF", props);
   return (
     <form onSubmit={props.handleSubmit} className="settingsForm">
       <div className="rainbow-text">
@@ -30,8 +42,9 @@ const SettingsForm = props => {
             <Field
               name="firstName"
               component={InputField}
+              defaultValue={props.profile.firstName}
               type="text"
-              validate={[required]}
+              validate={[required, minLengthText]}
               icon={name}
             />
           </div>
@@ -40,65 +53,62 @@ const SettingsForm = props => {
             <Field
               name="lastName"
               component={InputField}
+              defaultValue={props.profile.lastName}
               type="text"
-              validate={[required]}
+              validate={[required, minLengthText]}
               icon={name}
             />
           </div>
         </div>
+
         <div className="settingsForm__inputsGroup">
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">Country</label>
             <Field
+              defaultValue={props.profile.country}
               name="country"
               component={InputField}
               type="text"
-              validate={[required]}
+              validate={[required, minLengthText]}
               icon={country}
             />
           </div>
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">City</label>
             <Field
+              defaultValue={props.profile.city}
               name="city"
               component={InputField}
               type="text"
-              validate={[required]}
+              validate={[required, minLengthText]}
               icon={city}
             />
           </div>
         </div>
         <div className="settingsForm__inputsGroup">
           <div className="settingsForm__labelsGroup">
-            <label className="settingsForm__label">Phone Number</label>
+            <label className="settingsForm__label">Cell</label>
             <Field
+              defaultValue={props.profile.cell}
               name="cell"
               component={InputField}
               type="text"
-              validate={[required]}
+              validate={[required, isRegExPhone]}
               icon={phone}
             />
           </div>
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">Email</label>
             <Field
+              defaultValue={props.profile.email}
               name="email"
               component={InputField}
               type="text"
-              validate={[isRegEx, required]}
+              validate={[isRegExEmail, required]}
               icon={mail}
             />
           </div>
         </div>
-      {/*  <div className="settingsForm__datePicker">
-          <label className="settingsForm__label">Birthday</label>
-          <Field
-            name="birthday"
-            component={DatePickerComponent}
-            type="text"
-            validate={[required]}
-          />
-        </div>*/}
 
         <button type="submit" label="SAVE" className="btn">
           SAVE
@@ -109,7 +119,13 @@ const SettingsForm = props => {
 };
 const SettingsFormRedux = reduxForm({
   form: "settings",
-  destroyOnUnmount: false
+  destroyOnUnmount: false,
 })(SettingsForm);
 
-export default SettingsFormRedux;
+const SettingsFormContainer = connect(
+  state => ({
+    profile: state.profile
+  }),
+  { editProfile }
+)(SettingsFormRedux);
+export default SettingsFormContainer;

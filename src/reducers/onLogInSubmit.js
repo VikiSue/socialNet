@@ -9,7 +9,7 @@ const initialValue = {
   username: "",
   password: "",
   isLoading: false,
-  isLogged: true
+  isLogged: false
 };
 
 export const onLogInSubmit = (state = initialValue, action) => {
@@ -21,7 +21,7 @@ export const onLogInSubmit = (state = initialValue, action) => {
       };
     case GET_LOG_IN_SUCCESS:
       return {
-        ...state,
+
         ...action.payload,
         isLoading: false,
         isLogged: true
