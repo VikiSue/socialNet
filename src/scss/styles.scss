@@ -19,8 +19,8 @@ h5 {
   font-family: $textFont;
   font-size: 10px;
   @media screen and(max-width: 800px) {
-  font-size: 8px;
-}
+    font-size: 8px;
+  }
   @media screen and(max-width: 500px) {
     font-size: 6px;
   }
@@ -206,44 +206,74 @@ h5 {
 //PROFILE
 
 .profile {
-  width: 100%;
+  background-image: url("../../src/img/profile.jpg");
+  background-size: 70%;
+  background-position: left;
+  padding:  20px 0 0 20px;
+
   &__header {
-    width: 100%;
-    background-image: url("../../src/img/profile.jpg");
-    background-size: 100%;
-    height: 200px;
-    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
   &__border {
     border-radius: 50%;
     max-width: 300px;
-    width: 25%;
-    height: auto;
+    width: 45%;
     padding: 15px;
     line-height: 0;
     display: flex;
     @include allCenter;
     background-image: url("../../src/img/border.jpg");
-    position: absolute;
-    left: 10%;
-    top: 20%;
   }
   &__photo {
     border-radius: 50%;
-    width: 98%;
+    width: 100%;
     overflow: hidden;
   }
   &__img {
     display: block;
     width: 100%;
+    border-radius: 50%;
   }
   &__info {
-    position: absolute;
-    text-align: left;
-    left: 45%;
-    top: 50%;
-    font-size: 2em;
+    width: 50%;
     font-weight: bold;
+    text-align: left;
+    font-size: 2.2em;
+
+  }
+}
+.status {
+  cursor: pointer;
+  font-size: 2.2em;
+  font-weight: bold;
+  font-style: italic;
+  width: 95%;
+  text-align: left;
+  margin: 50px auto;
+  font-family: $headerFont;
+
+  &__title {
+
+  }
+&__text {
+  text-shadow: 5px 3px 2px rgba(206,11,154,0.88);
+}
+  &__form {
+  width: 100%;
+  }
+  &__input {
+    color: $purple;
+    max-width: 500px;
+    height: 30px;
+    padding: 3px;
+    width: 90%;
+    border-radius: $bradius;
+    border: 2px solid $marine;
+    @include input;
   }
 }
 // USERS
@@ -338,7 +368,7 @@ h5 {
     width: 20px;
     height: 20px;
     margin: 5px;
-    line-height: 2;
+    line-height: 1.1;
     font-weight: bold;
     border-radius: 50%;
     background-color: $red;
@@ -421,9 +451,6 @@ h5 {
     font-family: $headerFont;
     font-weight: bold;
   }
-
-  &__btn {;
-  }
 }
 
 // SETTINGS
@@ -481,7 +508,6 @@ h5 {
     position: relative;
     z-index: 20;
     width: 150px;
-
   }
 }
 

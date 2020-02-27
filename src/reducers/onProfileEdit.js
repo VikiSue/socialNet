@@ -1,7 +1,9 @@
 import {
   GET_PROFILE_EDITED_REQUEST,
   GET_PROFILE_EDITED_FAILURE,
-  GET_PROFILE_EDITED_SUCCESS
+  GET_PROFILE_EDITED_SUCCESS,
+  GET_PROFILE_STATUS_EDITED,
+  GET_PROFILE_STATUS_CHANGED
 } from "../types/types";
 
 const initialValue = {
@@ -15,7 +17,8 @@ const initialValue = {
   status: "Love is life. And if you miss love, you miss life.",
   email: "smithulass@gmail.com",
   cell: "098157788",
-  isLoading: false
+  isLoading: false,
+  editableStatus: false
 };
 export const onProfileEdit = (state = initialValue, action) => {
   switch (action.type) {
@@ -28,12 +31,23 @@ export const onProfileEdit = (state = initialValue, action) => {
       return {
         ...state,
         ...action.payload,
-        isLoading: false,
+        isLoading: false
       };
     case GET_PROFILE_EDITED_FAILURE:
       return {
         ...state,
         isLoading: false
+      };
+    case GET_PROFILE_STATUS_EDITED:
+      return {
+        ...state,
+        editableStatus: true
+      };
+    case GET_PROFILE_STATUS_CHANGED:
+      return {
+        ...state,
+        status: action.payload,
+        editableStatus: false
       };
     default:
       return state;

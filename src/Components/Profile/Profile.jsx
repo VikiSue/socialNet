@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
+import { editStatus } from "../../actions/editStatus";
+import { onStatusChange } from "../../actions/onStatusChange";
+import UserStatus from "./UserStatus";
+import { useProfile } from "./useProfile";
 
 const Profile = props => {
+  const { text, handleChange } = useProfile();
+  const handleBlur = () => {
+    props.onStatusChange(text);
+  };
   return (
     <div className="profile">
       <div className="profile__header">
@@ -14,6 +22,7 @@ const Profile = props => {
             />
           </div>
         </div>
+
         <div className="profile__info">
           <p className="profile__text">
             <span className="red">Name: </span> {props.profile.firstName}{" "}
@@ -32,13 +41,24 @@ const Profile = props => {
             <span className="red">Email:</span> {props.profile.email}
           </p>
         </div>
+        <UserStatus
+          props={props}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          profile={props.profile}
+          editStatus={props.editStatus}
+          onStatusChange={props.onStatusChange}
+        />
       </div>
     </div>
   );
 };
 
-const ProfileContainer = connect(state => ({
-  profile: state.profile
-}))(Profile);
+const ProfileContainer = connect(
+  state => ({
+    profile: state.profile
+  }),
+  { editStatus, onStatusChange }
+)(Profile);
 
 export default ProfileContainer;
