@@ -14,7 +14,6 @@ const Users = (props) => {
     props.users,
     props.currentPage
   );
-  console.log('LLLLLLLLL', list);
 
   return (
     <div className="users">
