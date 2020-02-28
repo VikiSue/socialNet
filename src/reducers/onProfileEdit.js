@@ -14,7 +14,7 @@ const initialValue = {
   birthday: "10/05/1989",
   country: "Ukraine",
   city: "Kyiv",
-  status: "Love is life. And if you miss love, you miss life.",
+  status: "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.",
   email: "smithulass@gmail.com",
   cell: "098157788",
   isLoading: false,

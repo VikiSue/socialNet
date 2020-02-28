@@ -13,7 +13,7 @@ export const fetchPhoto = () => dispatch => {
         .then(result =>
             dispatch({
                 type: GET_PHOTO_FETCH_SUCCESS,
-                payload: result.results
+                payload: result.results.sort((a, b) => a.created_at > b.created_at ? 1 : -1)
             })
         )
         .catch(err => {

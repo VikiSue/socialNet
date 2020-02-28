@@ -3,24 +3,19 @@
 
 .tabs {
 width: 100%;
-margin-top: 20px;
 
 }
 .react-tabs {
   width: 100%;
-  -webkit-tap-highlight-color: transparent;
-
-
   &__tab-list {
-    border-bottom: 3px solid $purple;
+    border-bottom: 1px solid $white;
     margin: 0;
     padding: 0;
-
   }
 
   &__tab {
     display: inline-block;
-    border: 3px solid $navy;
+    border: 1px solid $gray;
     border-radius: 5px;
     border-bottom: none;
     bottom: -1px;
@@ -30,16 +25,17 @@ margin-top: 20px;
     cursor: pointer;
     min-width: 100px;
     width: 40%;
-    color: $purple;
+    color: $gray;
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 2em;
 
     &--selected {
       background: $purple;
-      border-color: $navy;
+      border-color: $white;
       border-radius: 5px 5px 0 0;
       color: $white;
       font-weight: bold;
+      outline: none;
     }
 
     &--disabled {

@@ -5,6 +5,7 @@ import { GET_LOG_IN_SUCCESS } from "../types/types";
 import { onUsersFetch } from "../reducers/onUsersFetch";
 import { onProfileEdit } from "../reducers/onProfileEdit";
 import {onPhotoFetch} from "../reducers/onFhotoFetch";
+import {onNewPostAdding} from "../reducers/onNewPostAdding";
 
 export const rootReducer = combineReducers({
   form: formReducer.plugin({
@@ -20,5 +21,6 @@ export const rootReducer = combineReducers({
   logIn: onLogInSubmit,
   users: onUsersFetch,
   profile: onProfileEdit,
-  photos: onPhotoFetch
+  photos: onPhotoFetch,
+  posts: onNewPostAdding
 });

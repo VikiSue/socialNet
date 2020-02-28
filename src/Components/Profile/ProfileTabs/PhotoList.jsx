@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../../scss/photo.scss";
+import "../../../scss/photo.scss";
 import { connect } from "react-redux";
-import { fetchPhoto } from "../../actions/fetchPhoto";
-import Loader from "../reusableComponents/Loader/Loader";
+import { fetchPhoto } from "../../../actions/fetchPhoto";
+import Loader from "../../reusableComponents/Loader/Loader";
 
 const PhotoList = props => {
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "../../../scss/tabs.scss";
-import PhotoList from "../PhotoList";
+import PhotoList from "./PhotoList";
+import MyPosts from "./MyPosts/MyPosts";
 
 const ProfileTabs = (props) => (
     <Tabs>
@@ -11,7 +12,7 @@ const ProfileTabs = (props) => (
         </TabList>
 
         <TabPanel>
-            <h2>Any content 1</h2>
+            <MyPosts />
 
         </TabPanel>
         <TabPanel>
