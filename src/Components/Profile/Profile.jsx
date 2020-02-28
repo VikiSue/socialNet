@@ -4,12 +4,15 @@ import { editStatus } from "../../actions/editStatus";
 import { onStatusChange } from "../../actions/onStatusChange";
 import UserStatus from "./UserStatus";
 import { useProfile } from "./useProfile";
+import ProfileTabs from "./ProfileTabs/ProfileTabs";
 
 const Profile = props => {
   const { text, handleChange } = useProfile();
+  const status = text.length > 0 ? text : props.profile.status;
   const handleBlur = () => {
-    props.onStatusChange(text);
+    props.onStatusChange(status);
   };
+
   return (
     <div className="profile">
       <div className="profile__header">
@@ -49,6 +52,9 @@ const Profile = props => {
           editStatus={props.editStatus}
           onStatusChange={props.onStatusChange}
         />
+      </div>
+      <div className="tabs">
+        <ProfileTabs />
       </div>
     </div>
   );

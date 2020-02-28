@@ -206,17 +206,20 @@ h5 {
 //PROFILE
 
 .profile {
-  background-image: url("../../src/img/profile.jpg");
-  background-size: 70%;
-  background-position: left;
-  padding:  20px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+
 
   &__header {
-    height: 250px;
+    background-image: url("../../src/img/profile.jpg");
+    background-size: 100%;
+    background-position: left;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
+    padding: 20px 0 0 20px;
   }
   &__border {
     border-radius: 50%;
@@ -243,7 +246,6 @@ h5 {
     font-weight: bold;
     text-align: left;
     font-size: 2.2em;
-
   }
 }
 .status {
@@ -251,25 +253,35 @@ h5 {
   font-size: 2.2em;
   font-weight: bold;
   font-style: italic;
-  width: 95%;
+  min-width: 250px;
+  width: 100%;
   text-align: left;
-  margin: 50px auto;
+  margin-top: 50px;
+  height: 50px;
+  @include allCenter;
   font-family: $headerFont;
+  background-image: url("../../src/img/border.jpg");
+  background-size: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  color: $white;
+  margin-left: -20px;
+  padding-left: 40px;
 
   &__title {
-
+    width: 100%;
   }
-&__text {
-  text-shadow: 5px 3px 2px rgba(206,11,154,0.88);
-}
+  &__text {
+    width: 100%;
+  }
   &__form {
-  width: 100%;
+    width: 100%;
   }
   &__input {
-    color: $purple;
+    color: $navy;
     max-width: 500px;
     height: 30px;
-    padding: 3px;
+    padding: 5px;
     width: 90%;
     border-radius: $bradius;
     border: 2px solid $marine;

@@ -1,0 +1,45 @@
+@import "mixins";
+@import "variables";
+
+.photos {
+  width: 100%;
+  background-color: $purple;
+  padding-top: 30px;
+  color: $white;
+  &__list {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__item {
+    list-style: none;
+    text-align: left;
+    border: 2px solid $gray;
+    margin: 0 auto 30px;
+    padding: 7px;
+    border-radius: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__date,
+  &__description,
+  &__photo {
+    margin: 8px auto;
+    width: 98%;
+  }
+  &__date {
+    font-size: 1.5em;
+  }
+  &__description {
+    font-size: 2em;
+    font-style: italic;
+  }
+  &__photo {
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+  }
+}
