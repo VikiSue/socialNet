@@ -19,7 +19,7 @@ console.log("i", defaultValue);
           value={defaultValue}
           placeholder={placeholder}
           type={type}
-          maxLength="20"
+          maxLength="40"
           {...input}
           className={
             isFieldValid ? "inputGroup__input error" : "inputGroup__input "

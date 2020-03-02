@@ -38,6 +38,7 @@ h5 {
     justify-content: space-between;
   }
   &__logOut {
+    min-width: 100px;
     width: 15%;
     height: 100%;
     display: flex;
@@ -70,12 +71,12 @@ h5 {
 .navbar {
   display: flex;
   flex-direction: column;
-  min-width: 100px;
+  min-width: 75px;
   width: 15%;
   min-height: calc(100vh - 134px);
   height: 100%;
   background-color: $gray;
-  padding: 0 10px;
+  padding: 0 1em;
 
   &__list {
     padding: 0 10px;
@@ -110,7 +111,7 @@ h5 {
 //FORM
 
 .form {
-  min-width: 350px;
+  min-width: 250px;
   max-width: 500px;
   width: 50%;
   height: 80%;
@@ -162,7 +163,7 @@ h5 {
     border-radius: $bradius;
     margin: 0 auto;
     height: 40px;
-    min-width: 200px;
+    min-width: 100px;
     width: 100%;
     font-size: 1.6em;
     text-indent: 50px;
@@ -199,6 +200,7 @@ h5 {
   display: none;
 }
 .textS {
+  display: block;
   font-size: 0.8rem;
   color: $red;
 }
@@ -254,7 +256,7 @@ h5 {
   font-size: 2.2em;
   font-weight: bold;
   font-style: italic;
-  min-width: 250px;
+  min-width: 100px;
   width: 100%;
   text-align: left;
   margin-top: 50px;
@@ -355,7 +357,7 @@ h5 {
     font-weight: bold;
   }
   &__name {
-    min-width: 80px;
+    min-width: 70px;
     width: 30%;
     margin: 5px 0;
     text-align: left;
@@ -378,10 +380,10 @@ h5 {
   }
   &__pageActive {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 1.5em;
+    height: 1.5em;
     margin: 5px;
-    line-height: 1.1;
+    line-height: 1.5;
     font-weight: bold;
     border-radius: 50%;
     background-color: $red;
@@ -500,7 +502,7 @@ h5 {
   &__labelsGroup {
     display: flex;
     align-items: center;
-    min-width: 350px;
+    min-width: 200px;
     width: 48%;
     .inputGroup {
       width: 80%;

@@ -1,4 +1,3 @@
-const randomNum = Math.floor(Math.random() * (9999 - 1000)) + 1000;
 
 export const fetchUsersList = seeds => {
   return fetch(
