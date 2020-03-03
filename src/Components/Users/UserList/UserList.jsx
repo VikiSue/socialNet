@@ -7,7 +7,6 @@ import { Link, withRouter } from "react-router-dom";
 
 const UsersList = (props) => {
   const pages = [1, 2, 3, 4, 5, 6, 7];
-  console.log("Wi", props);
 
   const handlePageChange = p => {
     props.onUsersPageChange(p);

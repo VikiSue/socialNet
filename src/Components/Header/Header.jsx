@@ -6,7 +6,6 @@ import '../../scss/styles.scss';
 
 const Header = props => {
 
-    console.log("HEADER", props);
   return (
     <div className="header__content">
       <div className="logo">

@@ -9,8 +9,6 @@ const PhotoList = props => {
     props.fetchPhoto();
   }, []);
 
-
-console.log("PPP", props);
   return (
     <>
       <div className="photos">
