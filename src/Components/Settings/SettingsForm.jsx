@@ -15,14 +15,12 @@ import city from "../../img/city.png";
 import name from "../../img/name.png";
 import phone from "../../img/phone.png";
 
-
 const SettingsForm = props => {
   const minLengthText = () => {
     minLength(3);
   };
 
-  console.log("FFFF", props);
-  return (
+    return (
     <form onSubmit={props.handleSubmit} className="settingsForm">
       <div className="rainbow-text">
         <div className="title-text">
@@ -40,12 +38,12 @@ const SettingsForm = props => {
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">First Name</label>
             <Field
+              icon={name}
+              defaultValue={props.firstName}
               name="firstName"
               component={InputField}
-              defaultValue={props.profile.firstName}
               type="text"
               validate={[required, minLengthText]}
-              icon={name}
             />
           </div>
           <div className="settingsForm__labelsGroup">
@@ -53,7 +51,7 @@ const SettingsForm = props => {
             <Field
               name="lastName"
               component={InputField}
-              defaultValue={props.profile.lastName}
+              defaultValue={props.lastName}
               type="text"
               validate={[required, minLengthText]}
               icon={name}
@@ -65,7 +63,7 @@ const SettingsForm = props => {
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">Country</label>
             <Field
-              defaultValue={props.profile.country}
+              defaultValue={props.country}
               name="country"
               component={InputField}
               type="text"
@@ -76,7 +74,7 @@ const SettingsForm = props => {
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">City</label>
             <Field
-              defaultValue={props.profile.city}
+              defaultValue={props.city}
               name="city"
               component={InputField}
               type="text"
@@ -89,7 +87,7 @@ const SettingsForm = props => {
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">Cell</label>
             <Field
-              defaultValue={props.profile.cell}
+              defaultValue={props.cell}
               name="cell"
               component={InputField}
               type="text"
@@ -100,7 +98,7 @@ const SettingsForm = props => {
           <div className="settingsForm__labelsGroup">
             <label className="settingsForm__label">Email</label>
             <Field
-              defaultValue={props.profile.email}
+              defaultValue={props.email}
               name="email"
               component={InputField}
               type="text"
@@ -120,12 +118,18 @@ const SettingsForm = props => {
 const SettingsFormRedux = reduxForm({
   form: "settings",
   destroyOnUnmount: false,
+  initialValues: {
+    members: [
+      {
+        firstName: "myFirstName"
+      }
+    ]
+  },
+  enableReinitialize : true
 })(SettingsForm);
 
 const SettingsFormContainer = connect(
-  state => ({
-    profile: state.profile
-  }),
+ undefined,
   { editProfile }
 )(SettingsFormRedux);
 export default SettingsFormContainer;

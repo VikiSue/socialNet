@@ -16,7 +16,7 @@ const initialValue = {
   city: "Kyiv",
   status: "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.",
   email: "smithulass@gmail.com",
-  cell: "098157788",
+  cell: "0981577888",
   isLoading: false,
   editableStatus: false
 };

@@ -11,7 +11,6 @@ const InputField = ({
   ...props
 }) => {
   const isFieldValid = meta.touched && meta.error;
-console.log("i", defaultValue);
   return (
     <>
       <div className="inputGroup">

@@ -5,9 +5,19 @@ import { connect } from "react-redux";
 import Loader from "../reusableComponents/Loader/Loader";
 
 const Settings = props => {
+  const getInitialValues = () => {
+    return {
+      firstName: props.profile.firstName,
+      lastName: props.profile.lastName,
+      country: props.profile.country,
+      city: props.profile.city,
+      email: props.profile.email,
+      cell: props.profile.cell,
+    };
+  };
 
   const onSubmit = values => {
-    console.log('values', values);
+    console.log("values", values);
     props.editProfile(
       values.firstName,
       values.lastName,
@@ -15,11 +25,15 @@ const Settings = props => {
       values.city,
       values.email,
       values.cell
-    )
+    );
   };
   return (
     <div className="settings">
-      {props.isLoading ? <Loader /> : <SettingsForm  onSubmit={onSubmit}/>}
+      {props.isLoading ? (
+        <Loader />
+      ) : (
+        <SettingsForm onSubmit={onSubmit} initialValues={getInitialValues()} />
+      )}
     </div>
   );
 };
