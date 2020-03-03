@@ -1,0 +1,102 @@
+.users {
+  padding: 20px;
+  font-size: 1.7em;
+  &__search {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__icon {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+  }
+  &__input {
+    text-indent: 30px;
+    width: 100%;
+    border-radius: $bradius;
+    height: 30px;
+    padding: 0 5px;
+    @include input;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+  &__link {
+    text-decoration: none;
+    display: block;
+    margin: 10px;
+    color: $navy;
+  }
+  &__item {
+    padding: 5px;
+    @include input;
+    border: 2px solid $gray;
+    border-radius: $bradius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &__photo {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: $bradius;
+    border: 2px solid $gray;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &__info {
+    width: 80%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  &__name {
+    min-width: 70px;
+    width: 30%;
+    margin: 5px 0;
+    text-align: left;
+  }
+  &__location {
+    min-width: 70px;
+    width: 20%;
+    margin: 2px 0;
+    text-align: left;
+  }
+  &__pagination {
+    margin: 20px auto;
+  }
+  &__page {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  &__pageActive {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 5px;
+    line-height: 1.5;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: $red;
+  }
+  &__match {
+    height: 25px;
+    color: $red;
+    margin: 5px 0;
+    text-align: left;
+  }
+}

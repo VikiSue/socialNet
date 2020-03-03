@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../../../scss/photo.scss";
 import { connect } from "react-redux";
 import { fetchPhoto } from "../../../actions/fetchPhoto";
 import Loader from "../../reusableComponents/Loader/Loader";

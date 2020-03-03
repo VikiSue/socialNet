@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .photos {
   width: 100%;
@@ -9,7 +9,7 @@
   &__list {
     width: 90%;
     margin: 0 auto;
-    padding: 0;
+    padding: 20px 0;
   }
   &__item {
     list-style: none;

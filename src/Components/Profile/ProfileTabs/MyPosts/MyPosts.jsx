@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../../../../scss/posts.scss";
+import "../../../../scss/styles/_posts.scss";
 import { addPost } from "../../../../actions/addPost";
 import { useMyPosts } from "./useMyPosts";
 

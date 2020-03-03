@@ -1,0 +1,75 @@
+.logIn {
+  max-width: 1200px;
+  width: 95%;
+  height: calc(100vh - 100px);
+  margin: 0 auto;
+  text-align: center;
+  @include allCenter;
+}
+
+//FORM
+
+.form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  border: 3px solid $navy;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-image: url("../../img/login.jpg");
+  background-size: 100%;
+  &__title {
+    color: $red;
+    text-shadow: -6px -5px 6px $navy;
+    font-size: 6em;
+    align-self: flex-start;
+    margin: 10px 0 30px;
+    font-weight: 900;
+  }
+  &__inputs {
+    width: 100%;
+    text-align: center;
+  }
+}
+.inputGroup {
+  max-width: 450px;
+  width: 90%;
+  margin: 0 auto 60px;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    z-index: 10;
+  }
+  &__error {
+    position: absolute;
+    color: $red;
+    height: 15px;
+    width: 80%;
+    text-align: left;
+    font-weight: 600;
+  }
+  &__input {
+    position: relative;
+    display: block;
+    border-radius: $bradius;
+    margin: 0 auto;
+    height: 40px;
+    min-width: 100px;
+    width: 100%;
+    font-size: 1.6em;
+    text-indent: 50px;
+    @include input;
+  }
+}
+
+.error {
+  border: 2px solid $red;
+}

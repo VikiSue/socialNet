@@ -1,6 +1,5 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import "../../../scss/tabs.scss";
 import PhotoList from "./PhotoList";
 import MyPosts from "./MyPosts/MyPosts";
 

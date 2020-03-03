@@ -1,0 +1,84 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  background-color: $purple;
+
+  &__header {
+    background-image: url("../../img/profile.jpg");
+    background-size: 100%;
+    background-position: left;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 20px 0 0 20px;
+  }
+  &__border {
+    border-radius: 50%;
+    max-width: 300px;
+    width: 45%;
+    padding: 15px;
+    line-height: 0;
+    display: flex;
+    @include allCenter;
+    background-image: url("../../img/border.jpg");
+    overflow: hidden;
+  }
+  &__photo {
+    border-radius: 50%;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+  &__info {
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 2.2em;
+  }
+}
+.status {
+  cursor: pointer;
+  font-size: 2.2em;
+  font-weight: bold;
+  font-style: italic;
+  min-width: 100px;
+  width: 100%;
+  text-align: left;
+  margin-top: 50px;
+  height: 50px;
+  @include allCenter;
+  font-family: $headerFont;
+  background-image: url("../../img/border.jpg");
+  background-size: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  color: $white;
+  margin-left: -20px;
+  padding-left: 40px;
+
+  &__title {
+    width: 100%;
+  }
+  &__text {
+    width: 100%;
+  }
+  &__form {
+    width: 100%;
+  }
+  &__input {
+    color: $navy;
+    max-width: 500px;
+    height: 30px;
+    padding: 5px;
+    width: 90%;
+    border-radius: $bradius;
+    border: 2px solid $marine;
+    @include input;
+  }
+}
