@@ -1,9 +1,10 @@
 import React from "react";
 
 const UserStatus = props => {
+    console.log(props.profile.status);
   return (
     <div className="status">
-      {props.profile.status.length <= 0 ? (
+      {props.profile.status.length < 1 ? (
         <p className="status__title" onDoubleClick={props.editStatus}>
           {" "}
           What is on your mind?

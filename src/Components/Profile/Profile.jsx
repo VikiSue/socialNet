@@ -8,9 +8,8 @@ import ProfileTabs from "./ProfileTabs/ProfileTabs";
 
 const Profile = props => {
   const { text, handleChange } = useProfile();
-  const status = text.length > 0 ? text : props.profile.status;
   const handleBlur = () => {
-    props.onStatusChange(status);
+    props.onStatusChange(text);
   };
 
   return (
