@@ -11,6 +11,8 @@
     padding: 20px 0;
   }
   &__item {
+    min-width: 100px;
+    width: 70%;
     list-style: none;
     text-align: left;
     border: 2px solid $gray;
@@ -25,7 +27,7 @@
   &__description,
   &__photo {
     margin: 8px auto;
-    width: 98%;
+    width: 90%;
   }
   &__date {
     font-size: 1.5em;

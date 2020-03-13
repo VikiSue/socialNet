@@ -18,7 +18,8 @@ const initialValue = {
   email: "smithulass@gmail.com",
   cell: "0981577888",
   isLoading: false,
-  editableStatus: false
+  editableStatus: false,
+  friendsId: [],
 };
 export const onProfileEdit = (state = initialValue, action) => {
   switch (action.type) {

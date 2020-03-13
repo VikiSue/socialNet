@@ -73,30 +73,24 @@
     margin: 2px 0;
     text-align: left;
   }
-  &__pagination {
-    margin: 20px auto;
-  }
-  &__page {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  &__pageActive {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    margin: 5px;
-    line-height: 1.5;
-    font-weight: bold;
-    border-radius: 50%;
-    background-color: $red;
-  }
+
   &__match {
     height: 25px;
     color: $red;
     margin: 5px 0;
     text-align: left;
+  }
+  &__online,
+  &__offline {
+    width: 10%;
+    min-width: 40px;
+    font-size: 0.8em;
+    align-self: center;
+  }
+  &__online {
+    color: lawngreen;
+  }
+  &__offline {
+    color: $gray;
   }
 }

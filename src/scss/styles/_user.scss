@@ -66,4 +66,32 @@
     font-family: $headerFont;
     font-weight: bold;
   }
+  &__online,
+  &__offline {
+    min-width: 40px;
+    align-self: center;
+    margin-bottom: 20px;
+  }
+  &__online {
+    color: lawngreen;
+  }
+  &__offline {
+    color: $gray;
+  }
+  &__btn {
+    height: 40px;
+    width: 100px;
+    border-radius: $bradius;
+    color: $navy;
+    font-weight: bold;
+    background-color: $gray;
+    border: 3px solid $gray;
+    @include btns;
+    &--bright {
+      background-color: $gray;
+      border-color: $navy;
+      color: $red;
+    }
+  }
+
 }

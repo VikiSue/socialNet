@@ -13,7 +13,7 @@ export const useUsers = (fetchUsers, users, currentPage) => {
   const handleSearch = useCallback(
     e => {
       let text = e.target.value;
-      setSeachText(text);
+      setSeachText(text.trim());
     },
     [searchText]
   );
