@@ -7,7 +7,7 @@ const UsersList = props => {
       {props.list.map(item => (
         <NavLink
           exact
-          to={`/users/${item.id}`}
+          to={`${props.url}${item.id}`}
           key={item.id}
           onClick={() => props.getSelectedUser(props.list, item.id)}
           className="users__link"
@@ -31,8 +31,12 @@ const UsersList = props => {
               <p className="users__location">
                 <span className="red">City:</span> {item.location.city}
               </p>
-              <div className={item.online ? "users__online" : "hidden"}>&#8226; online</div>
-              <div className={item.online ? "hidden" : "users__offline"}>&#8226; offline</div>
+              <div className={item.online ? "users__online" : "hidden"}>
+                &#8226; online
+              </div>
+              <div className={item.online ? "hidden" : "users__offline"}>
+                &#8226; offline
+              </div>
             </div>
           </li>
         </NavLink>

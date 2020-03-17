@@ -8,7 +8,7 @@ export const fetchUsersList = page => {
       return response.results.map(item => ({
         ...item,
         id: (Math.floor(Math.random() * (99999 - 1)) + 1),
-          follow: Math.random() > 0.7,
+          follow: Math.random() > 0.6,
           online: Math.random() > 0.5,
       }));
     });

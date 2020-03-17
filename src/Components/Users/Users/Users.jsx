@@ -4,7 +4,7 @@ import { fetchUsers } from "../../../actions/fetchUsers";
 import { onUsersPageChange } from "../../../actions/onUsersPageChange";
 import Loader from "../../reusableComponents/Loader/Loader";
 import { useUsers } from "./useUsers";
-import UsersList from "../UserList/UserList";
+import UsersList from "../../reusableComponents/UsersList/UsersList";
 import search from "./../../../img/search.png";
 import { getSelectedUser } from "../../../actions/getSelectedUser";
 import Pagination from "../../reusableComponents/Pagination/Pagination";
@@ -44,6 +44,7 @@ const Users = props => {
             currentPage={props.currentPage}
           />
           <UsersList
+              url="/users/"
             list={list}
             currentPage={props.currentPage}
             fetchUsers={props.fetchUsers}

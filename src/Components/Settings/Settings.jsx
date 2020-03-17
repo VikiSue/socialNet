@@ -29,6 +29,17 @@ const Settings = props => {
   };
   return (
     <div className="settings">
+      <div className="rainbow-text">
+        <div className="title-text">
+          <span className="letters">P</span>
+          <span className="letters">R</span>
+          <span className="letters">O</span>
+          <span className="letters">F</span>
+          <span className="letters">I</span>
+          <span className="letters">L</span>
+          <span className="letters">E</span>
+        </div>
+      </div>
       {props.isLoading ? (
         <Loader />
       ) : (

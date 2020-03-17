@@ -9,11 +9,8 @@
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  position: relative;
   &__inputs {
     width: 100%;
-    position: absolute;
-    top: 25%;
     .btn {
       margin-top: 30px;
     }
@@ -48,7 +45,6 @@
     text-align: left;
   }
   &__datePicker {
-    position: relative;
     z-index: 20;
     width: 150px;
   }

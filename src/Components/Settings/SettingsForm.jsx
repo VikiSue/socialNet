@@ -22,17 +22,7 @@ const SettingsForm = props => {
 
     return (
     <form onSubmit={props.handleSubmit} className="settingsForm">
-      <div className="rainbow-text">
-        <div className="title-text">
-          <span className="letters">P</span>
-          <span className="letters">R</span>
-          <span className="letters">O</span>
-          <span className="letters">F</span>
-          <span className="letters">I</span>
-          <span className="letters">L</span>
-          <span className="letters">E</span>
-        </div>
-      </div>
+
       <div className="settingsForm__inputs">
         <div className="settingsForm__inputsGroup">
           <div className="settingsForm__labelsGroup">

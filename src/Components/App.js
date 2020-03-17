@@ -9,6 +9,8 @@ import Profile from "./Profile/Profile";
 import Settings from "./Settings/Settings";
 import Users from "./Users/Users/Users";
 import User from "./User/User";
+import Friends from "./Friends/Friends";
+import Friend from "./Friends/Friend/Friend";
 
 const App = props => {
     return (
@@ -31,6 +33,8 @@ const App = props => {
               <Route exact path="/settings" render={() => <Settings />} />
               <Route exact path="/users" render={() => <Users />} />
               <Route  path="/users/:id" render={() => <User />} />
+              <Route  exact path="/friends" render={() => <Friends />} />
+              <Route exact path="/friends/:id" render={() => <Friend />} />
             </Switch>
           </div>
         </div>
@@ -42,6 +46,5 @@ const App = props => {
 const AppWithRouter = withRouter(App);
 const AppContainer = connect(state => ({
   isLogged: state.logIn.isLogged,
-  users: state.users
 }))(AppWithRouter);
 export default AppContainer;

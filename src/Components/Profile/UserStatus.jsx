@@ -1,7 +1,6 @@
 import React from "react";
 
 const UserStatus = props => {
-    console.log(props.profile.status);
   return (
     <div className="status">
       {props.profile.status.length < 1 ? (

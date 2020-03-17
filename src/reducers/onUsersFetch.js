@@ -4,7 +4,8 @@ import {
   GET_USERS_FETCH_SUCCESS,
   SET_CURRENT_PAGE,
   GET_SELECTED_USER,
-  TOGGLE_FOLLOW
+  FOLLOW,
+  UNFOLLOW
 } from "../types/types";
 
 const initialValue = {
@@ -40,14 +41,18 @@ export const onUsersFetch = (state = initialValue, action) => {
     case GET_SELECTED_USER:
       return {
         ...state,
-        selectedUser: {...action.payload}
+        selectedUser: { ...action.payload }
       };
 
-    case  TOGGLE_FOLLOW:
+    case FOLLOW:
       return {
         ...state,
-        selectedUser: {...action.payload}
-
+        selectedUser: {...state.selectedUser, follow: true  }
+      };
+    case UNFOLLOW:
+      return {
+        ...state,
+        selectedUser: { ...action.payload }
       };
     default:
       return state;
