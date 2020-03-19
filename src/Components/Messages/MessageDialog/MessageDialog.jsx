@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { NavLink, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const MessageDialog = ({ match, friendsMessages, myMessages, myPhoto }) => {
   const id = match.params.id;
@@ -13,7 +13,6 @@ const MessageDialog = ({ match, friendsMessages, myMessages, myPhoto }) => {
   const conversation = dialogs.sort((a, b) =>
     a.date.split("/").reverse() > b.date.split("/").reverse() ? 1 : -1
   );
-  console.log(dialog);
 
   return (
     <div className="dialogs">
@@ -56,10 +55,10 @@ const MessageDialog = ({ match, friendsMessages, myMessages, myPhoto }) => {
           </li>
         ))}
       </ul>
-     {/* <form className="dialogs__form">
+      <form className="dialogs__form">
         <textarea className="dialogs__textarea" />
         <button className="btn">SEND</button>
-      </form>*/}
+      </form>
     </div>
   );
 };

@@ -33,8 +33,8 @@ const App = props => {
             <Switch>
               <Route exact path="/" render={() => <Profile />} />
               <Route exact path="/settings" render={() => <Settings />} />
+              <Route  exact path="/users/:id" render={() => <User />} />
               <Route exact path="/users" render={() => <Users />} />
-              <Route  path="/users/:id" render={() => <User />} />
               <Route  exact path="/friends" render={() => <Friends />} />
               <Route exact path="/friends/:id" render={() => <Friend />} />
               <Route exact path="/messages" render={() => <Messages />} />

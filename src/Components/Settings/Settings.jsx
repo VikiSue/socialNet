@@ -17,7 +17,6 @@ const Settings = props => {
   };
 
   const onSubmit = values => {
-    console.log("values", values);
     props.editProfile(
       values.firstName,
       values.lastName,
