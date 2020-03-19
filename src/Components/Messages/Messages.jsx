@@ -4,7 +4,6 @@ import { sendMessage } from "../../actions/sendMessage";
 import { NavLink, withRouter } from "react-router-dom";
 
 const Messages = ({ isLoading, friendsMessages, myMessages }) => {
-  const messages = [...friendsMessages, ...myMessages];
 
   return (
     <div className="messages">

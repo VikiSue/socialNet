@@ -136,11 +136,21 @@ const initialValue = {
 };
 
 export const onMessageAdd = (state = initialValue, action) => {
+
+
   switch (action.type) {
     case SEND_MESSAGE_REQUEST:
       return { ...state, isLoading: true };
     case SEND_MESSAGE_SUCCESS:
-      return { ...state, isLoading: false };
+      const pushTo = state.myMessages.filter( item => item.id == action.payload.id)[0];
+       pushTo.messages.push(action.payload.message);
+       const num = state.myMessages.indexOf(pushTo);
+       const messages = [...state.myMessages];
+        messages[num] = pushTo;
+
+      return { ...state,
+        myMessages: [...messages],
+        isLoading: false };
     case SEND_MESSAGE_FAILURE:
       return { ...state, isLoading: false };
     default:

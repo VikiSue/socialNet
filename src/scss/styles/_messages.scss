@@ -111,6 +111,8 @@
   &__name {
     font-weight: bold;
     letter-spacing: 3px;
+    font-size: 1.8em;
+    font-family: $headerFont;
   }
   &__list {
     width: 100%;
@@ -129,11 +131,10 @@
   }
   &__outcome {
     align-self: flex-start;
-
   }
   &__info {
     width: 100%;
-    background-color: $gray;
+    background-color:  $lightPurple;
     border-radius: 10px;
     padding: 5px;
     &--my {
@@ -151,23 +152,36 @@
     font-style: italic;
   }
   &__form {
+    background-color: $gray;
     position: fixed;
-    width: 100%;
+    width: 85%;
     bottom: 0;
-    padding-bottom: 10px;
-    right: 10px;
+    padding: 5px 15px 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    box-sizing: border-box;
   }
-  &__textarea {
-    width: 70%;
-      height: 40px;
+  &__input {
+    width: 75%;
+    max-width: 800px;
+    height: 30px;
     margin: 0 5px;
     border-radius: $bradius;
     outline: none;
     @include input;
     border: 2px solid $marine;
     padding: 5px;
+  }
+  &__btn {
+
+    width: 20%;
+    height: 30px;
+    border-radius: $bradius;
+    color: $navy;
+    font-weight: bold;
+    background-color: $gray;
+    border: 2px solid $navy;
+    @include btns;
   }
 }

@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { useMessageDialog } from "./useMessageDialog";
+import { sendMessage } from "./../../../actions/sendMessage";
+import Loader from "../../reusableComponents/Loader/Loader";
 
-const MessageDialog = ({ match, friendsMessages, myMessages, myPhoto }) => {
+const MessageDialog = ({
+  match,
+  friendsMessages,
+  myMessages,
+  myPhoto,
+  sendMessage,
+  isLoading
+}) => {
   const id = match.params.id;
+  const {
+    handleInput,
+    handleSendMessage,
+    conversation,
+    dialog,
+    textInput
+  } = useMessageDialog(friendsMessages, myMessages, id);
 
-  const dialog = friendsMessages.filter(item => item.id == id)[0];
-  const myDialogs = myMessages.filter(item => item.id == id)[0];
-  const dialogs = myDialogs
-    ? [...dialog.messages, ...myDialogs.messages]
-    : [...dialog.messages];
-  const conversation = dialogs.sort((a, b) =>
-    a.date.split("/").reverse() > b.date.split("/").reverse() ? 1 : -1
-  );
+  const handleSend = e => {
+    e.preventDefault();
+    sendMessage(textInput, id);
+    handleSendMessage();
+  };
 
   return (
     <div className="dialogs">
@@ -24,50 +38,75 @@ const MessageDialog = ({ match, friendsMessages, myMessages, myPhoto }) => {
         <p className={dialog.online ? "dialogs__online" : "hidden"}>online</p>
         <p className={dialog.online ? "hidden" : "dialogs__offline"}>offline</p>
       </div>
-      <ul className="dialogs__list">
-        {conversation.map(item => (
-          <li
-            key={item.date}
-            className={item.mine ? "dialogs__my" : "dialogs__outcome"}
-          >
-            <div
-              className={
-                item.mine ? "hidden" : "dialogs__photo  dialogs__photo--message"
-              }
-            >
-              <img src={dialog.img} alt="photo" className="dialogs__img" />
-            </div>
-            <div
-              className={
-                item.mine ? "dialogs__info dialogs__info--my" : "dialogs__info "
-              }
-            >
-              <div className="dialogs__date">{item.date}</div>
-              <div className="dialogs__text">{item.text}</div>
-            </div>
-            <div
-              className={
-                !item.mine ? "hidden" : "dialogs__photo dialogs__photo--message"
-              }
-            >
-              <img src={myPhoto} alt="photo" className="dialogs__img" />
-            </div>
-          </li>
-        ))}
-      </ul>
-      <form className="dialogs__form">
-        <textarea className="dialogs__textarea" />
-        <button className="btn">SEND</button>
-      </form>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <ul className="dialogs__list">
+            {conversation.map(item => (
+              <li
+                key={Math.random()}
+                className={item.mine ? "dialogs__my" : "dialogs__outcome"}
+              >
+                <div
+                  className={
+                    item.mine
+                      ? "hidden"
+                      : "dialogs__photo  dialogs__photo--message"
+                  }
+                >
+                  <img src={dialog.img} alt="photo" className="dialogs__img" />
+                </div>
+                <div
+                  className={
+                    item.mine
+                      ? "dialogs__info dialogs__info--my"
+                      : "dialogs__info "
+                  }
+                >
+                  <div className="dialogs__date">{item.date}</div>
+                  <div className="dialogs__text">{item.text}</div>
+                </div>
+                <div
+                  className={
+                    !item.mine
+                      ? "hidden"
+                      : "dialogs__photo dialogs__photo--message"
+                  }
+                >
+                  <img src={myPhoto} alt="photo" className="dialogs__img" />
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <form className="dialogs__form">
+            <input
+              type="text"
+              name="messageField"
+              className="dialogs__input"
+              onChange={handleInput}
+              value={textInput}
+            />
+            <button className="btn dialogs__btn" onClick={handleSend}>
+              SEND
+            </button>
+          </form>
+        </>
+      )}
     </div>
   );
 };
 
 const MessageDialogWithRouter = withRouter(MessageDialog);
-const MessageContainer = connect(state => ({
-  friendsMessages: state.messages.friendsMessages,
-  myMessages: state.messages.myMessages,
-  myPhoto: state.profile.photo
-}))(MessageDialogWithRouter);
+const MessageContainer = connect(
+  state => ({
+    friendsMessages: state.messages.friendsMessages,
+    myMessages: state.messages.myMessages,
+    isLoading: state.messages.isLoading,
+    myPhoto: state.profile.photo
+  }),
+  { sendMessage }
+)(MessageDialogWithRouter);
 
 export default MessageContainer;

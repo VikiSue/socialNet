@@ -5,10 +5,12 @@ import {
 } from "./../types/types";
 import { callApi } from "../services/callApi";
 
-var d = new Date();
+let  d = new Date();
+const month = (d.getMonth().length < 2 ? ("0" + (d.getMonth() + 1)) : ("0" + d.getMonth() + 1));
 
-var datestring =
-  d.getFullYear() + "-" + "0" + (d.getMonth() + 1) + "-" + d.getDate();
+
+var datestring = d.getDate() + "/" + month + "/" + d.getFullYear();
+
 
 const answers = [
   { date: datestring, text: "I love my bed, but I'd rather be in yours." },
@@ -29,22 +31,25 @@ const answers = [
   }
 ];
 
+export const sendMessage = (message, id) => dispatch => {
+  dispatch({ type: SEND_MESSAGE_REQUEST });
 
+  callApi(message)
+    .then(result =>
+      dispatch({
+        type: SEND_MESSAGE_SUCCESS,
+        payload:   {
+            message: {
+            date: datestring,
+            text: message,
+            mine: "mine"
+            },
+            id: id
+        }
 
-export const sendMessage = (username, password) => dispatch => {
-  dispatch({ type:  SEND_MESSAGE_REQUEST });
-
-  callApi(username, password)
-      .then(result =>
-          dispatch({
-            type: SEND_MESSAGE_SUCCESS,
-            payload: {
-              username: username,
-              password: password
-            }
-          })
-      )
-      .catch(err => {
-        dispatch({ type: SEND_MESSAGE_FAILURE, err });
-      });
+      })
+    )
+    .catch(err => {
+      dispatch({ type: SEND_MESSAGE_FAILURE, err });
+    });
 };
