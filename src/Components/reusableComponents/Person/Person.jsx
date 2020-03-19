@@ -10,7 +10,6 @@ const Person = ({ selectedUser, followUser, unFollowUser }) => {
   const handleUnFollow = () => {
     unFollowUser(selectedUser);
   };
-  console.log("SSSS", selectedUser.follow);
 
   return (
     <div className="user">

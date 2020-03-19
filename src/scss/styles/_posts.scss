@@ -13,16 +13,16 @@
   flex-direction: column;
 }
   &__textarea {
-    width: 90%;
-    max-width: 500px;
-    height: 60px;
-    margin: 20px auto;
-    border-radius: $bradius;
-    outline: none;
-    @include  input;
-    border: 2px solid $white;
-    padding: 5px;
-  }
+      width: 90%;
+      max-width: 500px;
+      height: 60px;
+      margin: 20px auto;
+      border-radius: $bradius;
+      outline: none;
+      @include  input;
+      border: 2px solid $white;
+      padding: 5px;
+    }
   &__btn {
     margin: 0 auto 30px;
 

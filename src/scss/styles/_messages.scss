@@ -1,0 +1,173 @@
+.messages {
+  width: 100%;
+  font-size: 1.5em;
+
+  &__list {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 5px;
+  }
+  &__item {
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: $bradius;
+    border: 3px solid $marine;
+    @include input;
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    @include allCenter;
+    justify-content: space-between;
+    text-decoration: none;
+    color: $navy;
+  }
+  &__photo {
+    width: 10%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid $marine;
+  }
+  &__img {
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  &__info {
+    width: 20%;
+  }
+  &__online {
+    color: lawngreen;
+  }
+  &__offline {
+    color: $marine;
+  }
+  &__name {
+    font-weight: bold;
+  }
+  &__message {
+    width: 65%;
+    text-align: left;
+    border-radius: $bradius;
+    background-color: $gray;
+    padding: 1em;
+  }
+  &__date {
+    width: 100%;
+    font-size: 0.8em;
+  }
+  &__lastMessage {
+    width: 100%;
+    max-height: 70px;
+    overflow: hidden;
+  }
+}
+
+//DIALOGS
+
+.dialogs {
+  font-size: 1.8em;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 70px;
+  &__header {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+    @include allCenter;
+    padding: 10px;
+    justify-content: space-between;
+    background-image: url("../../img/border.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: $white;
+  }
+  &__photo {
+    width: 10%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid $marine;
+    &--message {
+      border: 2px solid $gray;
+      margin: 5px;
+    }
+  }
+  &__img {
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+  }
+  &__online {
+    color: lawngreen;
+  }
+  &__offline {
+    color: $gray;
+  }
+  &__name {
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__my,
+  &__outcome {
+    width: 60%;
+    margin: 10px 5px;
+    min-width: 70px;
+    @include allCenter;
+  }
+  &__my {
+    align-self: flex-end;
+  }
+  &__outcome {
+    align-self: flex-start;
+
+  }
+  &__info {
+    width: 100%;
+    background-color: $gray;
+    border-radius: 10px;
+    padding: 5px;
+    &--my {
+      background-color: $lightBlue;
+    }
+  }
+  &__date {
+    width: 100%;
+    text-align: left;
+    font-size: 0.8em;
+    color: black;
+    margin-bottom: 3px;
+  }
+  &__text {
+    font-style: italic;
+  }
+  &__form {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__textarea {
+    width: 70%;
+      height: 40px;
+    margin: 0 5px;
+    border-radius: $bradius;
+    outline: none;
+    @include input;
+    border: 2px solid $marine;
+    padding: 5px;
+  }
+}

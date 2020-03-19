@@ -6,6 +6,7 @@ import { onUsersFetch } from "../reducers/onUsersFetch";
 import { onProfileEdit } from "../reducers/onProfileEdit";
 import {onPhotoFetch} from "../reducers/onFhotoFetch";
 import {onNewPostAdding} from "../reducers/onNewPostAdding";
+import {onMessageAdd} from "../reducers/onMessageAdd";
 
 export const rootReducer = combineReducers({
   form: formReducer.plugin({
@@ -22,5 +23,6 @@ export const rootReducer = combineReducers({
   users: onUsersFetch,
   profile: onProfileEdit,
   photos: onPhotoFetch,
-  posts: onNewPostAdding
+  posts: onNewPostAdding,
+  messages: onMessageAdd,
 });

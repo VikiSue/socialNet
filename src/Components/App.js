@@ -11,6 +11,8 @@ import Users from "./Users/Users/Users";
 import User from "./User/User";
 import Friends from "./Friends/Friends";
 import Friend from "./Friends/Friend/Friend";
+import Messages from "./Messages/Messages";
+import MessageDialog from "./Messages/MessageDialog/MessageDialog";
 
 const App = props => {
     return (
@@ -35,6 +37,8 @@ const App = props => {
               <Route  path="/users/:id" render={() => <User />} />
               <Route  exact path="/friends" render={() => <Friends />} />
               <Route exact path="/friends/:id" render={() => <Friend />} />
+              <Route exact path="/messages" render={() => <Messages />} />
+              <Route exact path="/messages/:id" render={() => <MessageDialog />} />
             </Switch>
           </div>
         </div>

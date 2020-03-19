@@ -18,11 +18,6 @@ setFriends(newUsers.filter(item => item.follow === true));
 
   }, [users]);
 
-
-
-
-console.log("NEWUSERS", friends);
-console.log("users", users);
   return <div className="friends">
       <div className="rainbow-text">
           <div className="title-text">
