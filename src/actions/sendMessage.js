@@ -5,12 +5,10 @@ import {
 } from "./../types/types";
 import { callApi } from "../services/callApi";
 
-let  d = new Date();
-const month = (d.getMonth().length < 2 ? ("0" + (d.getMonth() + 1)) : ("0" + d.getMonth() + 1));
+let d = new Date();
+var datestring = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
 
-
-var datestring = d.getDate() + "/" + month + "/" + d.getFullYear();
-
+/*const num = Math.floor(Math.random() * (6 - 1)) + 1;*/
 
 const answers = [
   { date: datestring, text: "I love my bed, but I'd rather be in yours." },
@@ -38,15 +36,14 @@ export const sendMessage = (message, id) => dispatch => {
     .then(result =>
       dispatch({
         type: SEND_MESSAGE_SUCCESS,
-        payload:   {
-            message: {
+        payload: {
+          message: {
             date: datestring,
             text: message,
             mine: "mine"
-            },
-            id: id
+          },
+          id: id
         }
-
       })
     )
     .catch(err => {
