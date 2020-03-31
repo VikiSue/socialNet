@@ -41,6 +41,7 @@ li {
   width: 100%;
   font-size: 4em;
   font-weight: bold;
+
   @include allCenter;
   &__content {
     width: 90%;

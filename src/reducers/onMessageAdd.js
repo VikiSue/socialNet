@@ -14,21 +14,21 @@ const initialValue = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRinY4vLmj_JVTSedukEYnvTIWLVZFvY__GWupSreUQEkVnNw2H",
       messages: [
         {
-          date: "10/12/2019",
+          date: "12:00/10/12/2019",
           text:
             "99 cups of coffee on the wall, 99 cups of coffee. Take one down. Pass it around, 98 cups of coffee on the wall..."
         },
         {
-          date: "31/12/2019",
+          date: "10:30/31/12/2019",
           text:
             "Laws of Physics: Hold up a piece of paper. I'll throw a rock. Who wins?"
         },
         {
-          date: "10/02/2020",
+          date: "11:20/10/02/2020/",
           text: "Political Lessons: If at first you don't succeed, cheat."
         },
         {
-          date: "10/03/2020",
+          date: "22:15/10/03/2020",
           text: "Frankly my dear, I don't give a duck."
         }
       ]
@@ -105,7 +105,7 @@ const initialValue = {
         {
           date: "14/12/2019",
           text: "When life gives you limes, I say reach for the tequila",
-          mine: "mine",
+          mine: "mine"
         },
         {
           date: "15/03/2020",
@@ -122,12 +122,44 @@ const initialValue = {
           date: "27/02/2020",
           text:
             "A man asked a fairy to make him desirable and irresistible to all women in bed. She turned him into a book.",
-          mine: "mine",
+          mine: "mine"
         },
         {
           date: "15/03/2020",
           text: "Political Lessons: If at first you don't succeed, cheat.",
-          mine: "mine",
+          mine: "mine"
+        }
+      ]
+    },
+    {
+      to: "Dave Zanckovsky",
+      id: 3,
+      messages: [
+        {
+          date: "14/12/2019",
+          text: "When life gives you limes, I say reach for the tequila",
+          mine: "mine"
+        },
+        {
+          date: "15/03/2020",
+          text: "Political Lessons: If at first you don't succeed, cheat.",
+          mine: "mine"
+        }
+      ]
+    },
+    {
+      to: "Julie Dane",
+      id: 4,
+      messages: [
+        {
+          date: "14/12/2019",
+          text: "When life gives you limes, I say reach for the tequila",
+          mine: "mine"
+        },
+        {
+          date: "15/03/2020",
+          text: "Political Lessons: If at first you don't succeed, cheat.",
+          mine: "mine"
         }
       ]
     }
@@ -136,21 +168,19 @@ const initialValue = {
 };
 
 export const onMessageAdd = (state = initialValue, action) => {
-
-
   switch (action.type) {
     case SEND_MESSAGE_REQUEST:
       return { ...state, isLoading: true };
     case SEND_MESSAGE_SUCCESS:
-      const pushTo = state.myMessages.filter( item => item.id == action.payload.id)[0];
-       pushTo.messages.push(action.payload.message);
-       const num = state.myMessages.indexOf(pushTo);
-       const messages = [...state.myMessages];
-        messages[num] = pushTo;
+      const pushTo = state.myMessages.filter(
+        item => item.id == action.payload.id
+      )[0];
+      pushTo.messages.push(action.payload.message);
+      const num = state.myMessages.indexOf(pushTo);
+      const messages = [...state.myMessages];
+      messages[num] = pushTo;
 
-      return { ...state,
-        myMessages: [...messages],
-        isLoading: false };
+      return { ...state, myMessages: [...messages], isLoading: false };
     case SEND_MESSAGE_FAILURE:
       return { ...state, isLoading: false };
     default:

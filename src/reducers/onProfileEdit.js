@@ -1,5 +1,4 @@
 import {
-  GET_PROFILE_EDITED_REQUEST,
   GET_PROFILE_EDITED_FAILURE,
   GET_PROFILE_EDITED_SUCCESS,
   GET_PROFILE_STATUS_EDITED,
@@ -17,27 +16,19 @@ const initialValue = {
   status: "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.",
   email: "smithulass@gmail.com",
   cell: "0981577888",
-  isLoading: false,
   editableStatus: false,
   friendsId: [],
 };
 export const onProfileEdit = (state = initialValue, action) => {
   switch (action.type) {
-    case GET_PROFILE_EDITED_REQUEST:
-      return {
-        ...state,
-        isLoading: true
-      };
     case GET_PROFILE_EDITED_SUCCESS:
       return {
         ...state,
         ...action.payload,
-        isLoading: false
       };
     case GET_PROFILE_EDITED_FAILURE:
       return {
         ...state,
-        isLoading: false
       };
     case GET_PROFILE_STATUS_EDITED:
       return {

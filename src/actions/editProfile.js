@@ -1,5 +1,4 @@
 import {
-  GET_PROFILE_EDITED_REQUEST,
   GET_PROFILE_EDITED_FAILURE,
   GET_PROFILE_EDITED_SUCCESS
 } from "../types/types";
@@ -13,7 +12,6 @@ export const editProfile = (
   email,
   cell
 ) => dispatch => {
-  dispatch({ type: GET_PROFILE_EDITED_REQUEST });
 
   callApi()
     .then(result =>

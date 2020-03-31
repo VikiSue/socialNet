@@ -10,7 +10,6 @@ import {
 
 const initialValue = {
   users: [],
-  isLoading: false,
   currentPage: 1,
   selectedUser: {}
 };
