@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import {Redirect, withRouter} from "react-router-dom";
 import { useMessageDialog } from "./useMessageDialog";
 import { sendMessage } from "./../../../actions/sendMessage";
 import Loader from "../../reusableComponents/Loader/Loader";
 import ScrollToBottom from "react-scroll-to-bottom";
+import LogIn from "../../LogIn/LogIn";
 
 const MessageDialog = ({
+    isLogged,
   match,
   friendsMessages,
   myMessages,
@@ -30,6 +32,7 @@ const MessageDialog = ({
   };
 
   return (
+
     <div className="dialogs">
       <div className="dialogs__header">
         <div className="dialogs__photo">
@@ -81,7 +84,7 @@ const MessageDialog = ({
             ))}
           </ul>
 
-          <form className="dialogs__form">
+          <form className={isLogged ? "dialogs__form" : "hidden"}>
             <input
               type="text"
               name="messageField"
@@ -100,8 +103,10 @@ const MessageDialog = ({
 };
 
 const MessageDialogWithRouter = withRouter(MessageDialog);
+
 const MessageContainer = connect(
   state => ({
+      isLogged: state.logIn.isLogged,
     friendsMessages: state.messages.friendsMessages,
     myMessages: state.messages.myMessages,
     isLoading: state.messages.isLoading,
