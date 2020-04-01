@@ -15,7 +15,7 @@ import city from "../../img/city.png";
 import name from "../../img/name.png";
 import phone from "../../img/phone.png";
 
-const SettingsForm = props => {
+const SettingsForm = (props) => {
   const minLengthText = () => {
     minLength(3);
   };
@@ -119,7 +119,7 @@ const SettingsFormRedux = reduxForm({
 })(SettingsForm);
 
 const SettingsFormContainer = connect(
- undefined,
+undefined,
   { editProfile }
 )(SettingsFormRedux);
 export default SettingsFormContainer;

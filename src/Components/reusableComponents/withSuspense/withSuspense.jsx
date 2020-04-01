@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Loader from "../Components/reusableComponents/Loader/Loader";
+import Loader from "../Loader/Loader";
 
 export const withSuspense = Component => {
   return (props) => (

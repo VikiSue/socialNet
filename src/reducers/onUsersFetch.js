@@ -3,7 +3,6 @@ import {
   GET_USERS_FETCH_FAILURE,
   GET_USERS_FETCH_SUCCESS,
   SET_CURRENT_PAGE,
-  GET_SELECTED_USER,
   FOLLOW,
   UNFOLLOW
 } from "../types/types";
@@ -11,7 +10,6 @@ import {
 const initialValue = {
   users: [],
   currentPage: 1,
-  selectedUser: {}
 };
 
 export const onUsersFetch = (state = initialValue, action) => {
@@ -37,21 +35,22 @@ export const onUsersFetch = (state = initialValue, action) => {
         ...state,
         currentPage: action.payload
       };
-    case GET_SELECTED_USER:
-      return {
-        ...state,
-        selectedUser: { ...action.payload }
-      };
 
     case FOLLOW:
+      const newUsers = [...state.users];
+      const user = newUsers.find(item => item.id == action.payload.id);
+      user.follow = true;
       return {
         ...state,
-        selectedUser: {...state.selectedUser, follow: true  }
+       users: [...newUsers]
       };
     case UNFOLLOW:
+      const newUsersList = [...state.users];
+      const selectedUser = newUsersList.find(item => item.id == action.payload.id);
+      selectedUser.follow = false;
       return {
         ...state,
-        selectedUser: { ...action.payload }
+        users: [...newUsersList]
       };
     default:
       return state;

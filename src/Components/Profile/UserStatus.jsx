@@ -1,11 +1,16 @@
 import React from "react";
 
 const UserStatus = props => {
+
+    const status = props.text.length > 0 ? props.text : props.profile.status;
+
+    const handleBlur = () => {
+        props.onStatusChange(status);
+    };
   return (
     <div className="status">
       {props.profile.status.length < 1 ? (
         <p className="status__title" onDoubleClick={props.editStatus}>
-          {" "}
           What is on your mind?
         </p>
       ) : (
@@ -17,7 +22,7 @@ const UserStatus = props => {
         </div>
       )}
       <form
-        onBlur={props.handleBlur}
+        onBlur={handleBlur}
         className={props.profile.editableStatus ? "status__form" : "hidden"}
       >
         <input
@@ -25,7 +30,7 @@ const UserStatus = props => {
           defaultValue={props.profile.status}
           onChange={props.handleChange}
           className="status__input"
-          maxLength="60"
+          maxLength="100"
         />
       </form>
     </div>

@@ -1,4 +1,5 @@
 import {
+  GET_PROFILE_EDITED_REQUES,
   GET_PROFILE_EDITED_FAILURE,
   GET_PROFILE_EDITED_SUCCESS,
   GET_PROFILE_STATUS_EDITED,
@@ -18,17 +19,24 @@ const initialValue = {
   cell: "0981577888",
   editableStatus: false,
   friendsId: [],
+  isLoading: false
 };
 export const onProfileEdit = (state = initialValue, action) => {
   switch (action.type) {
+    case GET_PROFILE_EDITED_REQUES:
+      return {
+        ...state, isLoading: true
+      };
     case GET_PROFILE_EDITED_SUCCESS:
       return {
         ...state,
         ...action.payload,
+        isLoading: false
       };
     case GET_PROFILE_EDITED_FAILURE:
       return {
         ...state,
+        isLoading: false
       };
     case GET_PROFILE_STATUS_EDITED:
       return {

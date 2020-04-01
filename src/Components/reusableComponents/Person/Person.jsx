@@ -1,74 +1,67 @@
 import React from "react";
-import { connect } from "react-redux";
-import { followUser } from "../../../actions/followUnfollow";
-import { unFollowUser } from "../../../actions/followUnfollow";
 
-const Person = ({ selectedUser, followUser, unFollowUser }) => {
+const Person = ({ selectedPerson, follow, unFollow, id }) => {
   const handleFollow = () => {
-    followUser(selectedUser);
-  };
-  const handleUnFollow = () => {
-    unFollowUser(selectedUser);
+    follow(id);
   };
 
+  const handleUnFollow = () => {
+    unFollow(id);
+  };
   return (
     <div className="user">
       <div className="user__img">
         <div className="user__outline">
           <div className="user__photo">
-            <img className="user__image" src={selectedUser.picture} />
+            <img className="user__image" src={selectedPerson.picture.large} />
           </div>
         </div>
       </div>
       <div className="user__text">
-        <div className={selectedUser.online ? "user__online" : "hidden"}>
-          {" "}
+        <div className={selectedPerson.online ? "user__online" : "hidden"}>
           &#8226; online
         </div>
-        <div className={selectedUser.online ? "hidden" : "user__offline"}>
-          {" "}
+        <div className={selectedPerson.online ? "hidden" : "user__offline"}>
           &#8226; offline
         </div>
         <p className="user__data">
-          <span className="user__info">Name: </span> {selectedUser.name}
+          <span className="user__info">Name: </span>{" "}
+          {`${selectedPerson.name.first} ${selectedPerson.name.last}`}
         </p>
         <p className="user__data">
-          <span className="user__info">Age: </span> {selectedUser.age}
+          <span className="user__info">Age: </span> {selectedPerson.age}
         </p>
         <p className="user__data">
           <span className="user__info">Location: </span>
-          {selectedUser.location}
+          {`${selectedPerson.location.city} ${selectedPerson.location.country}`}
         </p>
         <p className="user__data">
           <span className="user__info">Date of birth: </span>
-          {selectedUser.date}
+          {selectedPerson.dob.date}
         </p>
         <p className="user__data">
           <span className="user__info">Cell number: </span>
-          {selectedUser.cell}
+          {selectedPerson.cell}
         </p>
+        <button
+          className={selectedPerson.follow === true ? "user__btn" : "hidden"}
+          onClick={handleUnFollow}
+        >
+          Unfollow
+        </button>
+        <button
+          className={
+            selectedPerson.follow === false
+              ? "user__btn user__btn--bright"
+              : "hidden"
+          }
+          onClick={handleFollow}
+        >
+          Follow
+        </button>
       </div>
-      <button
-        className={selectedUser.follow === true ? "user__btn" : "hidden"}
-        onClick={handleUnFollow}
-      >
-        Unfollow {selectedUser.follow}
-      </button>
-      <button
-        className={selectedUser.follow === false ? "user__btn user__btn--bright" : "hidden" }
-        onClick={handleFollow}
-      >
-        Follow {selectedUser.follow}
-      </button>
     </div>
   );
 };
 
-const PersonContainer = connect(
-  state => ({
-    selectedUser: state.users.selectedUser
-  }),
-  { followUser, unFollowUser }
-)(Person);
-
-export default PersonContainer;
+export default Person;

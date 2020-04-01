@@ -8,9 +8,7 @@ import ProfileTabs from "./ProfileTabs/ProfileTabs";
 
 const Profile = props => {
   const { text, handleChange } = useProfile();
-  const handleBlur = () => {
-    props.onStatusChange(text);
-  };
+
 
   return (
     <div className="profile">
@@ -45,11 +43,12 @@ const Profile = props => {
         </div>
         <UserStatus
           props={props}
-          handleBlur={handleBlur}
           handleChange={handleChange}
           profile={props.profile}
           editStatus={props.editStatus}
           onStatusChange={props.onStatusChange}
+          text={text}
+
         />
       </div>
       <div className="tabs">

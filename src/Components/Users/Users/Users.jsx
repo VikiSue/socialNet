@@ -6,7 +6,6 @@ import Loader from "../../reusableComponents/Loader/Loader";
 import { useUsers } from "./useUsers";
 import UsersList from "../../reusableComponents/UsersList/UsersList";
 import search from "./../../../img/search.png";
-import { getSelectedUser } from "../../../actions/getSelectedUser";
 import Pagination from "../../reusableComponents/Pagination/Pagination";
 
 const Users = props => {
@@ -44,12 +43,11 @@ const Users = props => {
             currentPage={props.currentPage}
           />
           <UsersList
+              list={props.users}
               url="/users/"
-            list={list}
             currentPage={props.currentPage}
             fetchUsers={props.fetchUsers}
             onUsersPageChange={props.onUsersPageChange}
-            getSelectedUser={props.getSelectedUser}
           />
         </>
       )}
@@ -64,6 +62,6 @@ const UsersContainer = connect(
     currentPage: state.users.currentPage,
     selectedUser: state.users.selectedUser
   }),
-  { fetchUsers, onUsersPageChange, getSelectedUser }
+  { fetchUsers, onUsersPageChange }
 )(Users);
 export default UsersContainer;

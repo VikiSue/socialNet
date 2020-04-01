@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchUsers } from "../../actions/fetchUsers";
-import {onUsersPageChange} from "../../actions/onUsersPageChange";
-import {getSelectedUser} from "../../actions/getSelectedUser";
+import { fetchFriends } from "../../actions/fetchFriends";
 import UsersList from "../reusableComponents/UsersList/UsersList";
 import Loader from "../reusableComponents/Loader/Loader";
 
 
-const Friends = ({ users, fetchUsers, isLoading, onUsersPageChange, getSelectedUser }) => {
-  const [newUsers, setNewUsers] = useState([...users]);
-  const [friends, setFriends] = useState([]);
+const Friends = ({ friends, fetchFriends, isLoading, getSelectedUser }) => {
 
     useEffect( () => {
-       users.length === 0 ? setNewUsers(fetchUsers(1)) : setNewUsers([...users]);
+    fetchFriends();
 
-setFriends(newUsers.filter(item => item.follow === true));
+  }, []);
 
-  }, [users]);
+
 
   return <div className="friends">
       <div className="rainbow-text">
@@ -34,11 +30,7 @@ setFriends(newUsers.filter(item => item.follow === true));
           <Loader />
       ) : (
               <UsersList
-                  list={friends}
-                  url="/friends/"
-                  fetchUsers={fetchUsers}
-                  onUsersPageChange={onUsersPageChange}
-                  getSelectedUser={getSelectedUser}
+                  list={friends} url={'/friends/'}/*follow={followFriends} unFollow={unfollowFriends}*/
               />
       )}
   </div>;
@@ -46,10 +38,10 @@ setFriends(newUsers.filter(item => item.follow === true));
 
 const FriendsContainer = connect(
   state => ({
-    users: state.users.users,
-    isLoading: state.users.isLoading
+    friends: state.friends.friends,
+    isLoading: state.friends.isLoading
   }),
-  { fetchUsers, onUsersPageChange, getSelectedUser }
+  { fetchFriends }
 )(Friends);
 
 export default FriendsContainer;

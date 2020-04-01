@@ -4,9 +4,7 @@ import { withRouter } from "react-router-dom";
 import { useMessageDialog } from "./useMessageDialog";
 import { sendMessage } from "./../../../actions/sendMessage";
 import Loader from "../../reusableComponents/Loader/Loader";
-import ScrollToBottom from 'react-scroll-to-bottom';
-
-
+import ScrollToBottom from "react-scroll-to-bottom";
 
 const MessageDialog = ({
   match,
@@ -25,16 +23,11 @@ const MessageDialog = ({
     textInput
   } = useMessageDialog(friendsMessages, myMessages, id);
 
-
-
   const handleSend = e => {
     e.preventDefault();
     sendMessage(textInput, id);
     handleSendMessage();
-
-
   };
-
 
   return (
     <div className="dialogs">
@@ -49,9 +42,8 @@ const MessageDialog = ({
       {isLoading ? (
         <Loader />
       ) : (
-        <ScrollToBottom className="dialogs__scroll" >
+        <ScrollToBottom className="dialogs__scroll">
           <ul className="dialogs__list">
-
             {conversation.map(item => (
               <li
                 key={Math.random()}

@@ -2,6 +2,7 @@ import React from "react";
 import SettingsForm from "./SettingsForm";
 import { editProfile } from "../../actions/editProfile";
 import { connect } from "react-redux";
+import Loader from "../reusableComponents/Loader/Loader";
 
 const Settings = props => {
   const getInitialValues = () => {
@@ -38,13 +39,14 @@ const Settings = props => {
           <span className="letters">E</span>
         </div>
       </div>
-      <SettingsForm onSubmit={onSubmit} initialValues={getInitialValues()} />
+      {props.isLoading ? <Loader/> : <SettingsForm onSubmit={onSubmit} initialValues={getInitialValues()} />}
     </div>
   );
 };
 
 const SettingsContainer = connect(
-  state => ({ profile: state.profile }),
+  state => ({ profile: state.profile,
+    isLoading: state.profile.isLoading}),
   { editProfile }
 )(Settings);
 export default SettingsContainer;
