@@ -43,8 +43,8 @@ const Users = props => {
             currentPage={props.currentPage}
           />
           <UsersList
-              list={props.users}
-              url="/users/"
+            list={list}
+            url="/users/"
             currentPage={props.currentPage}
             fetchUsers={props.fetchUsers}
             onUsersPageChange={props.onUsersPageChange}

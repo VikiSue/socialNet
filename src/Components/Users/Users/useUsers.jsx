@@ -18,8 +18,6 @@ export const useUsers = (fetchUsers, users, currentPage) => {
     [searchText]
   );
 
-
-
   useEffect(() => {
     const filteredUsers = users.filter(
       item =>

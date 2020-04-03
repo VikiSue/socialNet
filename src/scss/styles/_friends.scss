@@ -2,4 +2,30 @@
   width: 95%;
   margin: 0 auto;
   font-size: 16px;
+  &__sort {
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+  }
+  &__text {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  &__btn {
+    width: 70px;
+    height: 23px;
+    text-align: center;
+    font-size: .7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 5px;
+    border-radius: $bradius;
+    border: 2px solid $navy;
+    background-color: $gray;
+    color: $navy;
+    @include btns;
+  }
 }

@@ -3,8 +3,6 @@ import { NavLink, withRouter } from "react-router-dom";
 
 const UsersList = props => {
 
-  const getSelectedPerson = () => {};
-
   return (
     <>
       {props.list.map(item => (

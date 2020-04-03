@@ -4,7 +4,6 @@ const Person = ({ selectedPerson, follow, unFollow, id }) => {
   const handleFollow = () => {
     follow(id);
   };
-
   const handleUnFollow = () => {
     unFollow(id);
   };
