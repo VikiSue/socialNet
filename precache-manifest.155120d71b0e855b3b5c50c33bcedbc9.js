@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "baf943f6d3b80aebb97722fa55f87964",
+    "revision": "c9f9c6f45c6611a33da5315688dfaf84",
     "url": "/socialNet/index.html"
   },
   {
-    "revision": "68a78dab0351a5a9d688",
-    "url": "/socialNet/static/css/main.c249e037.chunk.css"
+    "revision": "ae5fdd41e4f7a1010cb2",
+    "url": "/socialNet/static/css/main.dfaf0930.chunk.css"
   },
   {
-    "revision": "fc14d2b80ee551537116",
-    "url": "/socialNet/static/js/2.51f47fc1.chunk.js"
+    "revision": "2d22d39a17143124a05c",
+    "url": "/socialNet/static/js/2.e90f1a79.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/socialNet/static/js/2.51f47fc1.chunk.js.LICENSE.txt"
+    "url": "/socialNet/static/js/2.e90f1a79.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df46421b5d60b128e42e",
-    "url": "/socialNet/static/js/3.8f684c99.chunk.js"
+    "revision": "12ea5fbd5f4823bb3968",
+    "url": "/socialNet/static/js/3.57af5fe9.chunk.js"
   },
   {
-    "revision": "e91d87bb63dad3e7f872",
-    "url": "/socialNet/static/js/4.c0ab11b2.chunk.js"
+    "revision": "a9dcb4ead9d13750f982",
+    "url": "/socialNet/static/js/4.4764570c.chunk.js"
   },
   {
     "revision": "a42a4a3489932154d2bc",
@@ -32,20 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/socialNet/static/js/6.10186dac.chunk.js"
   },
   {
-    "revision": "0cbc687409a05dfac836",
-    "url": "/socialNet/static/js/7.bf52d84f.chunk.js"
+    "revision": "29c30788a56a48c1f5ac",
+    "url": "/socialNet/static/js/7.2667067e.chunk.js"
   },
   {
-    "revision": "14b4b53e84454f092fc4",
-    "url": "/socialNet/static/js/8.b3b25fa7.chunk.js"
+    "revision": "5a30c6f8564b82336512",
+    "url": "/socialNet/static/js/8.72e816b8.chunk.js"
   },
   {
-    "revision": "68a78dab0351a5a9d688",
-    "url": "/socialNet/static/js/main.ca36301e.chunk.js"
+    "revision": "ae5fdd41e4f7a1010cb2",
+    "url": "/socialNet/static/js/main.726c7787.chunk.js"
   },
   {
-    "revision": "735e8c064659ec8b519c",
-    "url": "/socialNet/static/js/runtime-main.8e61cd92.js"
+    "revision": "37de4c2f8894fd1a0b6b",
+    "url": "/socialNet/static/js/runtime-main.ae312912.js"
   },
   {
     "revision": "eef79caf2c762811a492f2c19362a42c",
