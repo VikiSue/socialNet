@@ -1,13 +1,13 @@
 import React from "react";
-import Person from "../reusableComponents/Person/Person";
+import Person from "../../reusableComponents/Person/Person";
 import { connect } from "react-redux";
-import { followUser } from "../../actions/followUnFollowUser";
-import { unFollowUser } from "../../actions/followUnFollowUser";
+import { followUser } from "../../../actions/followUnFollowUser";
+import { unFollowUser } from "../../../actions/followUnFollowUser";
 
-const User = ({ users, match, followUser, unFollowUser }) => {
+const User = ({ match,  users, followUser, unFollowUser }) => {
   const id = match.params.id;
-  const selectedPerson = users.filter(item => item.id == id)[0];
-
+  const selectedPerson = users.filter(item => item.id === +id)[0];
+  console.log(users, selectedPerson, id, users);
   return (
     <Person
       selectedPerson={selectedPerson}

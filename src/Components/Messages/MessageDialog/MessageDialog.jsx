@@ -92,7 +92,7 @@ const MessageDialog = ({
               onChange={handleInput}
               value={textInput}
             />
-            <button className="btn dialogs__btn" onClick={handleSend}>
+            <button className="btn dialogs__btn" onClick={handleSend} disabled={textInput.length === 0}>
               SEND
             </button>
           </form>

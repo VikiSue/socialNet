@@ -13,7 +13,7 @@ import { withSuspense } from "./reusableComponents/withSuspense/withSuspense";
 //lazy import
 const Settings = React.lazy(() => import("./Settings/Settings"));
 const Friend = React.lazy(() => import("./Friends/Friend/Friend"));
-const User = React.lazy(() => import("./User/User"));
+const User = React.lazy(() => import("./Users/User/User"));
 const Messages = React.lazy(() => import("./Messages/Messages"));
 const MessageDialog = React.lazy(() =>
   import("./Messages/MessageDialog/MessageDialog")

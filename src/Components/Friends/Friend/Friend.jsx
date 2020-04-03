@@ -8,9 +8,16 @@ import {
 
 const Friend = ({ match, friends, followFriends, unFollowFriends }) => {
   const id = match.params.id;
-  const selectedPerson = friends.filter(item => item.id == id)[0];
+  const selectedPerson = friends.filter(item => item.id === +id)[0];
 
-  return <Person selectedPerson={selectedPerson} id={id} follow={followFriends} unFollow={unFollowFriends}/>;
+  return (
+    <Person
+      selectedPerson={selectedPerson}
+      id={id}
+      follow={followFriends}
+      unFollow={unFollowFriends}
+    />
+  );
 };
 
 const FriendContainer = connect(
