@@ -25,14 +25,15 @@ const App = props => {
       <div className="header">
         <Header />
       </div>
-      {props.isLogged ? <Redirect to="/" /> : <LogIn />}
+      {props.isLogged ? <Redirect to="/" /> : <Redirect to="/login" />}
       <div className="main">
-        <nav className="navbar">
+        <nav className={props.isLogged ? "navbar" : "hidden"}>
           <Navbar />
         </nav>
         <div className="content">
           <Switch>
             <Route exact path="/" render={() => <Profile />} />
+            <Route exact path="/login" render={() => <LogIn />} />
             <Route exact path="/settings" render={withSuspense(Settings)} />
             <Route exact path="/users/:id" render={withSuspense(User)} />
             <Route exact path="/users" render={() => <Users />} />
