@@ -1,6 +1,6 @@
 import React from "react";
 import LogInForm from "./Form/LogInForm";
-import { onLogIn } from "../../actions/onLogIn";
+import { onLogIn } from "../../Redux/actions/onLogIn";
 import { connect } from "react-redux";
 import Loader from "../reusableComponents/Loader/Loader";
 

@@ -3,13 +3,13 @@ import {
   GET_LOG_IN_FAILURE,
   GET_LOG_IN_SUCCESS,
   GET_LOG_OUT
-} from "../types/types";
+} from "../../types/types";
 
 const initialValue = {
   username: "",
   password: "",
   isLoading: false,
-  isLogged: false
+  isLogged: true
 };
 
 export const onLogInSubmit = (state = initialValue, action) => {

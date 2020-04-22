@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchUsers } from "../../../actions/fetchUsers";
-import { onUsersPageChange } from "../../../actions/onUsersPageChange";
+import { fetchUsers } from "../../../Redux/actions/fetchUsers";
+import { onUsersPageChange } from "../../../Redux/actions/onUsersPageChange";
 import Loader from "../../reusableComponents/Loader/Loader";
 import { useUsers } from "./useUsers";
 import UsersList from "../../reusableComponents/UsersList/UsersList";

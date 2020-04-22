@@ -1,8 +1,8 @@
 import React from "react";
 import Person from "../../reusableComponents/Person/Person";
 import { connect } from "react-redux";
-import { followUser } from "../../../actions/followUnFollowUser";
-import { unFollowUser } from "../../../actions/followUnFollowUser";
+import { followUser } from "../../../Redux/actions/followUnFollowUser";
+import { unFollowUser } from "../../../Redux/actions/followUnFollowUser";
 
 const User = ({ match,  users, followUser, unFollowUser }) => {
   const id = match.params.id;

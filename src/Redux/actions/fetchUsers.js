@@ -2,9 +2,9 @@ import {
   GET_USERS_FETCH_REQUEST,
   GET_USERS_FETCH_FAILURE,
   GET_USERS_FETCH_SUCCESS
-} from "../types/types";
+} from "../../types/types";
 
-import { fetchUsersList } from "../services/fetchUsersList";
+import { fetchUsersList } from "../../services/fetchUsersList";
 
 
 

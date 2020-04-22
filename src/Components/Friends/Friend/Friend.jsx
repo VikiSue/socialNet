@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import {
   followFriends,
   unFollowFriends
-} from "../../../actions/followUnFollowFriends";
+} from "../../../Redux/actions/followUnFollowFriends";
 
 const Friend = ({ match, friends, followFriends, unFollowFriends }) => {
   const id = match.params.id;

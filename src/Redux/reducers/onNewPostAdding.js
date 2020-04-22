@@ -1,4 +1,4 @@
-import { ADD_NEW_POST, DELETE_MY_POST } from ".././types/types";
+import { ADD_NEW_POST, DELETE_MY_POST } from "../../types/types";
 
 const initialValue = [
   {

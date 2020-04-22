@@ -2,8 +2,8 @@ import {
   GET_PROFILE_EDITED_REQUES,
   GET_PROFILE_EDITED_FAILURE,
   GET_PROFILE_EDITED_SUCCESS
-} from "../types/types";
-import { callApi } from "../services/callApi";
+} from "../../types/types";
+import { callApi } from "../../services/callApi";
 
 export const editProfile = (
   firstName,
@@ -11,7 +11,8 @@ export const editProfile = (
   country,
   city,
   email,
-  cell
+  cell,
+  birthday
 ) => dispatch => {
   dispatch({ type: GET_PROFILE_EDITED_REQUES });
 
@@ -25,7 +26,8 @@ export const editProfile = (
           country: country,
           city: city,
           email: email,
-          cell: cell
+          cell: cell,
+          birthday: birthday
         }
       })
     )

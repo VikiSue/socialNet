@@ -1,5 +1,5 @@
-import { FOLLOW, UNFOLLOW} from "./../types/types";
-import {followOption} from "../services/followOption";
+import { FOLLOW, UNFOLLOW} from "../../types/types";
+import {followOption} from "../../services/followOption";
 
 
 export const followUser = (id) => followOption(FOLLOW, id);

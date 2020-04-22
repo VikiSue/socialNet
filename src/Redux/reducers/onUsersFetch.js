@@ -5,7 +5,7 @@ import {
   SET_CURRENT_PAGE,
   FOLLOW,
   UNFOLLOW
-} from "../types/types";
+} from "../../types/types";
 
 const initialValue = {
   users: [],

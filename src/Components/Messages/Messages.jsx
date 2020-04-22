@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { sendMessage } from "../../actions/sendMessage";
+import { sendMessage } from "../../Redux/actions/sendMessage";
 import { NavLink, withRouter } from "react-router-dom";
 
 const Messages = ({ isLoading, friendsMessages, myMessages }) => {

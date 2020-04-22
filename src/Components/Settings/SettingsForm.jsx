@@ -1,28 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
-import { editProfile } from "../../actions/editProfile";
+import { editProfile } from "../../Redux/actions/editProfile";
 import InputField from "../reusableComponents/Inputs/InputField";
 import { Field, reduxForm } from "redux-form";
 import {
   isRegExEmail,
   required,
   isRegExPhone,
-  minLength
+  minLength,
+    maxDate,
+    minDate
 } from "../../services/validators";
 import mail from "../../img/mail.png";
 import country from "../../img/country.png";
 import city from "../../img/city.png";
 import name from "../../img/name.png";
 import phone from "../../img/phone.png";
+import calendar from "../../img/calendar.png";
 
-const SettingsForm = (props) => {
+
+
+
+const SettingsForm = props => {
   const minLengthText = () => {
     minLength(3);
   };
 
-    return (
+  return (
     <form onSubmit={props.handleSubmit} className="settingsForm">
-
       <div className="settingsForm__inputs">
         <div className="settingsForm__inputsGroup">
           <div className="settingsForm__labelsGroup">
@@ -96,6 +101,18 @@ const SettingsForm = (props) => {
               icon={mail}
             />
           </div>
+          <div className="settingsForm__labelsGroup">
+            <label className="settingsForm__label">Date of Birth</label>
+            <Field
+              defaultValue={props.birthday}
+              name="birthday"
+              component={InputField}
+              type="date"
+              validate={[required, maxDate, minDate]}
+              icon={calendar}
+            />
+
+          </div>
         </div>
 
         <button type="submit" label="SAVE" className="btn">
@@ -115,11 +132,10 @@ const SettingsFormRedux = reduxForm({
       }
     ]
   },
-  enableReinitialize : true
+  enableReinitialize: true
 })(SettingsForm);
 
-const SettingsFormContainer = connect(
-undefined,
-  { editProfile }
+const SettingsFormContainer = connect ( undefined,
+  { editProfile}
 )(SettingsFormRedux);
 export default SettingsFormContainer;

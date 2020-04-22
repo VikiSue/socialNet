@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchFriends } from "../../actions/fetchFriends";
+import { fetchFriends } from "../../Redux/actions/fetchFriends";
 import UsersList from "../reusableComponents/UsersList/UsersList";
 import Loader from "../reusableComponents/Loader/Loader";
 import { useFriends } from "./useFriends";

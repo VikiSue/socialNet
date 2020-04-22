@@ -2,9 +2,9 @@ import {
     GET_PHOTO_FETCH_REQUEST,
     GET_PHOTO_FETCH_FAILURE,
     GET_PHOTO_FETCH_SUCCESS
-} from "../types/types";
+} from "../../types/types";
 
-import {fetchPhotosList} from "../services/fetchPhotosList";
+import {fetchPhotosList} from "../../services/fetchPhotosList";
 
 
 export const fetchPhoto = () => dispatch => {

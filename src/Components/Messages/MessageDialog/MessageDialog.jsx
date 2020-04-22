@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import {Redirect, withRouter} from "react-router-dom";
 import { useMessageDialog } from "./useMessageDialog";
-import { sendMessage } from "./../../../actions/sendMessage";
+import { sendMessage } from "../../../Redux/actions/sendMessage";
 import Loader from "../../reusableComponents/Loader/Loader";
 import ScrollToBottom from "react-scroll-to-bottom";
 import LogIn from "../../LogIn/LogIn";

@@ -2,7 +2,7 @@ import {
   SEND_MESSAGE_REQUEST,
   SEND_MESSAGE_SUCCESS,
   SEND_MESSAGE_FAILURE
-} from "../types/types";
+} from "../../types/types";
 
 const initialValue = {
   friendsMessages: [

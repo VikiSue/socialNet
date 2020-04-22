@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { onLogOut } from "../../actions/onLogOut";
+import { onLogOut } from "../../Redux/actions/onLogOut";
 import logo from "../../img/logo.png";
 import '../../scss/styles.scss';
 

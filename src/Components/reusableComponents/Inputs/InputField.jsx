@@ -11,6 +11,7 @@ const InputField = ({
   ...props
 }) => {
   const isFieldValid = meta.touched && meta.error;
+  console.log(meta);
   return (
     <>
       <div className="inputGroup">
@@ -28,7 +29,7 @@ const InputField = ({
           <img src={icon} alt="icon" />
         </div>
         <p className="inputGroup__error">
-          {isFieldValid ? meta.error : undefined}{" "}
+          {isFieldValid ? meta.error : undefined}
         </p>
       </div>
     </>

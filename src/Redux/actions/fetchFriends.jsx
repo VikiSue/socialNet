@@ -2,9 +2,9 @@ import {
     GET_FRIENDS_FETCH_REQUEST,
     GET_FRIENDS_FETCH_FAILURE,
     GET_FRIENDS_FETCH_SUCCESS
-} from "../types/types";
+} from "../../types/types";
 
-import { fetchUsersList } from "../services/fetchUsersList";
+import { fetchUsersList } from "../../services/fetchUsersList";
 
 
 

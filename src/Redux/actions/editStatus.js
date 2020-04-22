@@ -1,4 +1,4 @@
-import { GET_PROFILE_STATUS_EDITED } from "./../types/types";
+import { GET_PROFILE_STATUS_EDITED } from "../../types/types";
 
 
 export const editStatus = () => {

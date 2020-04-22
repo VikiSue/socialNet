@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { editStatus } from "../../actions/editStatus";
-import { onStatusChange } from "../../actions/onStatusChange";
+import { editStatus } from "../../Redux/actions/editStatus";
+import { onStatusChange } from "../../Redux/actions/onStatusChange";
 import UserStatus from "./UserStatus";
 import { useProfile } from "./useProfile";
 import ProfileTabs from "./ProfileTabs/ProfileTabs";

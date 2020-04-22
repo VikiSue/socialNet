@@ -1,4 +1,4 @@
-import { ADD_NEW_POST } from ".././types/types";
+import { ADD_NEW_POST } from "../../types/types";
 
 export const addPost = text => {
   var d = new Date();

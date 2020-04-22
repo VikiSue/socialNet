@@ -55,3 +55,17 @@
   width: $width;
   margin: 20px auto;
 }
+
+@mixin spaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin spaceAround {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

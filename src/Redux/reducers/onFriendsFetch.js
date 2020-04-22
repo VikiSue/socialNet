@@ -3,7 +3,7 @@ import {
   GET_FRIENDS_FETCH_FAILURE,
   GET_FRIENDS_FETCH_SUCCESS,
   FOLLOW_FRIENDS, UNFOLLOW_FRIENDS
-} from "../types/types";
+} from "../../types/types";
 
 const initialValue = {
   friends: [],
