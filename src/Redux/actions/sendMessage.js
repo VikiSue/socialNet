@@ -8,7 +8,7 @@ import moment from "moment";
 
 const answers = [
   {
-    date: moment().format("hh:mm:ss  DD/MM/YYYY"),
+    date: moment().format("HH:mm:ss  DD/MM/YYYY"),
     text: "I love my bed, but I'd rather be in yours."
   },
   {
@@ -43,7 +43,7 @@ export const sendMessage = (message, id) => dispatch => {
         type: SEND_MESSAGE_SUCCESS,
         payload: {
           message: {
-            date: moment().format("hh:mm:ss  DD/MM/YYYY"),
+            date: moment().format("HH:mm:ss  DD/MM/YYYY"),
             text: message,
             mine: "mine"
           },
